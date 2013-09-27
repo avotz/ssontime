@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>ssontime</name>
+	<version>1.0</version>
+	<creationDate>27/09/2013</creationDate>
+	<author>Alonso</author>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<copyright>Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.</copyright>
+	<description>Template para ssontime - Servicios sin limites a tiempo</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>fonts</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		
+		
+	</files>
+	<positions>
+		<position>menu_footer</position>
+		<position>debug</position>
+		<position>idiomas</position>
+		<position>banner</position>
+		<position>menu</position>
+		<position>redes</position>
+		
+		
+		
+	</positions>
+	
+	
+</extension>

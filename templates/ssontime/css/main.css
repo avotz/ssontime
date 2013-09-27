@@ -1,0 +1,64 @@
+@font-face{font-family:'sinlimites';src:url("../fonts/sinlimites.eot");src:url("../fonts/sinlimites.eot?#iefix") format('embedded-opentype'),url("../fonts/sinlimites.woff") format('woff'),url("../fonts/sinlimites.ttf") format('truetype'),url("../fonts/sinlimites.svg#sinlimites") format('svg');font-weight:normal;font-style:normal}
+[data-icon]:before{font-family:'sinlimites';content:attr(data-icon);speak:none;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-home,.icon-airplane,.icon-bookmarks,.icon-facebook,.icon-twitter{font-family:'sinlimites';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased}
+.icon-home:before{content:"\e000"}
+.icon-airplane:before{content:"\e001"}
+.icon-bookmarks:before{content:"\e002"}
+.icon-facebook:before{content:"\e004"}
+.icon-twitter:before{content:"\e003"}
+html,body{background:url("../img/bg_motivo.jpg");font-family:'Droid Sans',sans-serif;font-size:14px}
+.btn{background:c0c0c0;padding:1em;display:block;width:20%;font-size:1.6em;text-shadow:0 1px 2px rgba(0,0,0,0.5);color:#fff;text-decoration:none}
+.btn_verde{background:#bed948}
+.btn_azul{background:#3b5998}
+.btn_celeste{background:#0aaeee}
+.inner{margin:0 auto;width:960px}
+p{line-height:1.5em}
+header{background:#fff;height:75px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);position:relative;}
+header ul{margin:0;padding:0}
+header #logo{display:inline-block;width:100px}
+header #idiomas{display:inline-block;vertical-align:top;width:100px;border-left:1px solid #1f1f1f;margin:8px 0 0 0;padding:.5em;}
+header #idiomas ul{list-style:none;}
+header #idiomas ul li{padding:.2em;}
+header #idiomas ul li a{text-decoration:none;color:#1f1f1f}
+header #idiomas ul li a:hover{text-decoration:underline;color:#bed948}
+header #menu{float:right;margin-top:20px;}
+header #menu ul li{margin-right:1em;border-radius:15px;display:inline-block;vertical-align:top;}
+header #menu ul li a{color:#1f1f1f;font-size:16px;text-transform:uppercase;text-decoration:none;display:block;padding:.5em}
+header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
+#banner-home{background-image:url("../img/banner-home.jpg");background-attachment:fixed;background-color:#000;background-position:center;background-repeat:no-repeat;background-size:cover;height:549px;text-align:center;}
+#banner-home .content-banner{padding-top:100px;text-align:center;}
+#banner-home .content-banner h1{color:#fff;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
+#banner-home .content-banner h3{color:#fff;font-size:1.5em;font-weight:400;margin-top:0;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
+#banner-home .content-banner a{margin:60px auto}
+#banner-servicios{background-color:#bed748;height:100px;text-align:center;}
+#banner-servicios h1{margin:0;color:#fff;padding-top:10px;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
+#content{min-height:500px;margin-top:20px;margin-bottom:30px;}
+#content ul li{line-height:1.5em}
+#content h1{color:#3b5998}
+#content td{border:1px solid #000;padding:7px}
+#content #tours,#content #rates,#content #location{display:inline-block;vertical-align:top;cursor:pointer}
+#content #tours:hover,#content #rates:hover,#content #location:hover{background:#b1b1b1}
+#content .descripcion-tours,#content .descripcion-rates,#content .descripcion-locations{display:none}
+#content .content-home{text-align:center;}
+#content .content-home h3{font-size:2em;font-weight:400;margin-top:90px;margin-bottom:0}
+#content .content-home h3 + p{font-size:1.3em;margin-top:0}
+#content .content-home .services-home{margin-top:90px;}
+#content .content-home .services-home a{display:inline-block;margin:5px;vertical-align:top;height:177px;width:177px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 3px rgba(0,0,0,0.5);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(1,#f9f9f8));background-image:-webkit-linear-gradient(top,#fff 0%,#f9f9f8 100%);background-image:-moz-linear-gradient(top,#fff 0%,#f9f9f8 100%);background-image:linear-gradient(top,bottom,#fff 0%,#f9f9f8 100%);border:1px solid #9fafcd;border-radius:10px;text-decoration:none;padding-top:30px;}
+#content .content-home .services-home a .icon-home,#content .content-home .services-home a .icon-airplane,#content .content-home .services-home a .icon-bookmarks{font-size:3em;color:#000;margin-bottom:20px;display:block}
+#content .content-home .services-home a .title{font-size:1.5em;color:#000;display:block;margin-bottom:10px}
+#content .content-home .services-home a .description{font-size:.9em;display:block;color:#838282}
+#content article{margin-top:20px;clear:both;}
+#content article h1{margin:0;font-size:2em}
+#content article h1+h3{margin:0;font-size:1em}
+#content article p>img{float:left;margin-right:10px}
+footer{background:#fff;min-height:150px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 -1px 2px rgba(0,0,0,0.5);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 -1px 2px rgba(0,0,0,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 -1px 2px rgba(0,0,0,0.5);position:relative;}
+footer #menu-footer{display:block;margin:0 auto;text-align:center;padding-top:10px;}
+footer #menu-footer ul li{display:inline-block;margin-right:1em;}
+footer #menu-footer ul li a{color:#1f1f1f;font-size:16px;text-transform:uppercase;text-decoration:none;display:block;padding:.5em}
+footer #menu-footer ul .current,footer #menu-footer ul li:hover{color:#ebe9e9}
+footer #redes{margin:20px auto;text-align:center;display:block;}
+footer #redes ul li{display:inline-block;margin-right:1em;}
+footer #redes ul li .icon-facebook,footer #redes ul li .icon-twitter{color:#fff;font-size:1.5em;padding:.4em;text-decoration:none}
+footer #redes ul li .icon-facebook{background:#3b5998}
+footer #redes ul li .icon-twitter{background:#0aaeee}
+footer #copyright{margin:20px auto;text-align:center;display:block;font-size:12px;color:#c3c3c3}
