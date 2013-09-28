@@ -36,7 +36,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
     <link rel="icon" type="image/png" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/favicon_32x32.ico">
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     
- <?php if ($itemid == 112):?>
+ <?php if ($itemid == 112 || $itemid == 107):?>
         <style type="text/css">
            
             #content .item-page{
