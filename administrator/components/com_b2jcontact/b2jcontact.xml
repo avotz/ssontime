@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>COM_B2JCONTACT</name>
+	<creationDate>September 2013</creationDate>
+	<author>Bang2Joom</author>
+	<authorEmail>info@bang2joom.com</authorEmail>
+	<authorUrl>http://www.bang2joom.com</authorUrl>
+	<copyright>Copyright 2013 Bang2Joom. All rights reserved.</copyright>
+	<license>GNU/GPL v3</license>
+	<version>1.4</version>
+	<desc>COM_B2JCONTACT_DESC</desc>
+
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>b2jcontact.php</filename>
+		<filename>b2jcontact.inc</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<folder>css</folder>
+		<folder>helpers</folder>
+		<folder>js</folder>
+		<folder>models</folder>
+		<folder>lib</folder>
+		<folder>sef_ext</folder>
+		<folder>uploads</folder>
+		<folder>views</folder>
+	</files>
+
+	<media destination="com_b2jcontact" folder="media">
+		<filename>index.html</filename>
+		<folder>fonts</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>mimetypes</folder>
+	</media>
+
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_b2jcontact.ini</language>
+		<language tag="it-IT">it-IT/it-IT.com_b2jcontact.ini</language>	
+        <language tag="fr-FR">fr-FR/fr-FR.com_b2jcontact.ini</language>	
+        <language tag="es-ES">es-ES/es-ES.com_b2jcontact.ini</language>	
+        <language tag="nl-NL">nl-NL/nl-NL.com_b2jcontact.ini</language>	
+        <language tag="de-DE">de-DE/de-DE.com_b2jcontact.ini</language>
+        <language tag="fi_FI">fi_FI/fi_FI.com_b2jcontact.ini</language>
+        <language tag="pt-PT">pt-PT/pt-PT.com_b2jcontact.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.com_b2jcontact.ini</language>
+        <language tag="sk-SK">sk-SK/sk-SK.com_b2jcontact.ini</language>
+	</languages>
+
+	<administration>
+		<menu>COM_B2JCONTACT_MENU</menu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>b2jcontact.php</filename>
+			<filename>b2jinstall.php</filename>
+			<folder>controllers</folder>
+			<folder>tables</folder>
+			<folder>css</folder>
+			<folder>helpers</folder>
+			<folder>images</folder>
+			<folder>js</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>views</folder>
+		</files>
+
+		<languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.com_b2jcontact.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_b2jcontact.sys.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_b2jcontact.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_b2jcontact.sys.ini</language>
+            <language tag="fr-FR">fr-FR/fr-FR.com_b2jcontact.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_b2jcontact.sys.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_b2jcontact.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_b2jcontact.sys.ini</language>
+			<language tag="fi-FI">fi-FI/fi-FI.com_b2jcontact.ini</language>
+			<language tag="fi-FI">fi-FI/fi-FI.com_b2jcontact.sys.ini</language>
+			<language tag="pt-PT">pt-PT/pt-PT.com_b2jcontact.ini</language>
+			<language tag="pt-PT">pt-PT/pt-PT.com_b2jcontact.sys.ini</language>
+			<language tag="ru-RU">ru-RU/ru-RU.com_b2jcontact.ini</language>
+			<language tag="ru-RU">ru-RU/ru-RU.com_b2jcontact.sys.ini</language>
+			<language tag="sk-SK">sk-SK/sk-SK.com_b2jcontact.ini</language>
+			<language tag="sk-SK">sk-SK/sk-SK.com_b2jcontact.sys.ini</language>
+		</languages>
+
+	</administration>
+	<scriptfile>install.php</scriptfile>
+	<install>
+		<sql><file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file></sql>
+	</install>
+
+	<uninstall>
+		<sql><file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file></sql>
+	</uninstall>
+
+	<update>
+		<schemas><schemapath type="mysql">sql/updates/mysql</schemapath></schemas>
+	</update>
+
+	<updateservers>
+		<server type="extension" priority="1" name="B2Jcontact update site"><![CDATA[http://repos.bang2joom.com/components/com_b2jcontact.xml]]></server>
+	</updateservers>
+
+	<chain>
+		<extension directory="modules" name="lib_b2jcontact" type="library" />
+		<extension directory="modules" name="mod_b2jcontact" type="module" />
+	</chain>
+
+</extension>
+

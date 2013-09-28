@@ -1,0 +1,557 @@
+div.form-horizontal .nav-tabs > .active > a:hover{
+	background-color: none !important;
+	border-color: transparent !important;
+}
+div.form-horizontal .nav-tabs > .active > a{
+	opacity:1.0;
+	filter:alpha(opacity=100);
+}
+div.form-horizontal .nav > li > a:hover{
+	background-color: transparent !important;
+	border-color: transparent !important;
+	opacity:1.0;
+	filter:alpha(opacity=100);
+}
+div.form-horizontal .nav-tabs > li > a:hover{
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+div.form-horizontal .nav-tabs > li{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+div.form-horizontal .nav-tabs > li > a{
+	background-color: transparent !important;
+	border-color: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: none !important;
+	padding-right: 20px !important;
+	background-repeat: no-repeat !important;
+	width: 150px;
+	height: 88px;
+	position: relative;
+	text-align: center;
+	opacity:0.6;
+	border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	filter:alpha(opacity=30);
+}
+div.form-horizontal .nav-tabs > li:last-child > a{
+	padding-right: 0 !important;
+}
+div.form-horizontal .nav-tabs {
+	border: none !important;
+}
+div.form-horizontal .nav-tabs > li > a > span{
+	color: #ffffff;
+	text-align: center;
+	margin-top: 66px;
+	position: absolute;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	left: 0;
+	width: 150px;
+}
+.b2j-contact-field-title{ 
+	color:#ffffff; 
+	width:99%; 
+	text-transform: uppercase; 
+	font-size: 12px;
+	padding-top:6px;
+	padding-bottom: 4px;
+	padding-left: 7px;
+}
+div.span10 .span{ 
+	font-weight:bold; 
+	line-height:16px;
+}
+.form-horizontal .control-label label{
+	font-size: 14px;
+	color: #707070;
+}
+
+div.form-horizontal .tab-pane#details .control-label label a{
+	color: #6c9aab;
+	text-decoration: underline;
+}
+div.form-horizontal .control-group .controls > input{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	width: 354px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+div.form-horizontal .control-group .controls > input.selext{
+	width: 150px !important;
+	margin-right: 30px;
+	border-right: 1px solid #cccccc;
+}
+div.form-horizontal .control-group .controls input{
+	height: 30px;
+	color: #707070;
+}
+div.form-horizontal .control-group .controls > textarea{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	width: 354px;
+	color: #707070;
+}
+
+
+div.form-horizontal .tab-pane#details .control-group .controls input{
+	border-left: 5px solid #6c9aab !important;	
+}
+div.form-horizontal .tab-pane#formfields .control-group .controls input{
+	border-left: 5px solid #d67e6e !important;	
+}
+div.form-horizontal .tab-pane#dynamicfields .control-group .controls input{
+	border-left: 5px solid #97ba7e !important;	
+}
+div.form-horizontal .tab-pane#events .control-group .controls input{
+	border-left: 5px solid #855c6e !important;	
+}
+div.form-horizontal .tab-pane#security .control-group .controls input{
+	border-left: 5px solid #c4be90 !important;	
+}
+
+
+div.form-horizontal .tab-pane .control-group .controls textarea{
+	overflow-y: scroll;
+    overflow-x: hidden;
+}
+div.form-horizontal .tab-pane#details .control-group .controls textarea{
+	border-left: 5px solid #78abbe !important;	
+}
+div.form-horizontal .tab-pane#formfields .control-group .controls textarea{
+	border-left: 5px solid #d67e6e !important;	
+}
+div.form-horizontal .tab-pane#dynamicfields .control-group .controls textarea{
+	border-left: 5px solid #97ba7e !important;	
+}
+div.form-horizontal .tab-pane#events .control-group .controls textarea{
+	border-left: 5px solid #94667a !important;	
+}
+div.form-horizontal .tab-pane#security .control-group .controls textarea{
+	border-left: 5px solid #c4be90 !important;	
+}
+
+/* Let's get this party started */
+div.form-horizontal .tab-pane .control-group .controls textarea::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+div.form-horizontal .tab-pane .control-group .controls textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #cccccc;
+}
+/* Handle */
+div.form-horizontal .tab-pane#details .control-group .controls textarea::-webkit-scrollbar-thumb{
+	 background: #78abbe;
+    -webkit-box-shadow: inset 0 0 6px #78abbe;
+}
+div.form-horizontal .tab-pane#formfields .control-group .controls textarea::-webkit-scrollbar-thumb{
+	 background: #d67e6e; 
+    -webkit-box-shadow: inset 0 0 6px #d67e6e; 
+}
+div.form-horizontal .tab-pane#dynamicfields .control-group .controls textarea::-webkit-scrollbar-thumb{
+	 background: #97ba7e;
+    -webkit-box-shadow: inset 0 0 6px #97ba7e;
+}
+div.form-horizontal .tab-pane#events .control-group .controls textarea::-webkit-scrollbar-thumb{
+	 background: #94667a;
+    -webkit-box-shadow: inset 0 0 6px #94667a;
+}
+div.form-horizontal .tab-pane#security .control-group .controls textarea::-webkit-scrollbar-thumb{
+	 background: #c4be90;
+    -webkit-box-shadow: inset 0 0 6px #c4be90;
+}
+
+div.form-horizontal .control-group .controls .chzn-container{
+	width: 372px !important;
+	vertical-align: top;
+} 
+
+div.form-horizontal .control-group .controls .chzn-container a{
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	border: 1px solid #cccccc;
+	height: 30px;
+	padding-top: 8px;
+	color: #707070;
+} 
+div.form-horizontal .control-group .controls .input-append a{
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	border: 1px solid #cccccc;
+} 
+div.form-horizontal .control-group .controls .input-medium{
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	border: 1px solid #cccccc;
+	width: 312px;
+} 
+div.form-horizontal .control-group .controls .chzn-container div.chzn-drop{
+	width: 370px !important;
+} 
+
+div.form-horizontal .tab-pane#details .control-group .controls .chzn-container a{
+	border-left: 5px solid #78abbe !important;	
+}
+div.form-horizontal .tab-pane#formfields .control-group .controls .chzn-container a{
+	border-left: 5px solid #d67e6e !important;	
+}
+div.form-horizontal .tab-pane#dynamicfields .control-group .controls .chzn-container a{
+	border-left: 5px solid #97ba7e !important;	
+}
+div.form-horizontal .tab-pane#events .control-group .controls .chzn-container a{
+	border-left: 5px solid #94667a !important;	
+}
+div.form-horizontal .tab-pane#security .control-group .controls .chzn-container a{
+	border-left: 5px solid #c4be90 !important;	
+}
+
+div.form-horizontal .control-group .controls select.selext+div{
+	width: 174px !important;
+}
+div.form-horizontal .control-group .controls select.selext+div .chzn-drop{
+	width: 172px !important;	
+}
+
+div.form-horizontal .chzn-container-single .chzn-single{
+	background-image: none;
+}
+div.form-horizontal .chzn-container-active .chzn-single-with-drop{
+	background-color: transparent;
+}
+div.form-horizontal .chzn-container-single .chzn-single div{
+	width: 40px;
+}
+div.form-horizontal .tab-pane#details .chzn-container-single .chzn-single div b{
+	background: #78abbe url('../images/chosen-sprite.png') no-repeat 0 0;
+}
+div.form-horizontal .tab-pane#formfields .chzn-container-single .chzn-single div b{
+	background: #d67e6e url('../images/chosen-sprite.png') no-repeat 0 0;
+}
+div.form-horizontal .tab-pane#dynamicfields .chzn-container-single .chzn-single div b{
+	background: #97ba7e url('../images/chosen-sprite.png') no-repeat 0 0;
+}
+div.form-horizontal .tab-pane#events .chzn-container-single .chzn-single div b{
+	background: #94667a url('../images/chosen-sprite.png') no-repeat 0 0;
+}
+div.form-horizontal .tab-pane#security .chzn-container-single .chzn-single div b{
+	background: #c4be90 url('../images/chosen-sprite.png') no-repeat 0 0;
+}
+div.form-horizontal .chzn-container-active .chzn-single-with-drop div b{
+	background-position: -32px 1px !important;
+}
+
+div.form-horizontal .tab-pane#details .btn-primary {
+	background-image: linear-gradient(#6c9aab,#6c9aab);	
+	background-color: #6c9aab;
+}
+.radiobutton.checked .point{
+visibility: visible;
+opacity: 1;
+}
+.radiobutton{
+display: inline-block;
+width: 10px;
+height: 10px;
+background: white;
+border-radius: 9px;
+border: solid 2px #cccccc;
+margin: 0 4px 0 0;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-ms-transition: all 0.3s;
+-o-transition: all 0.3s;
+transition: all 0.3s;
+cursor: pointer;
+float: left;
+}
+.radiobutton .point{
+width: 6px;
+height: 6px;
+margin: 2px;
+background: #c07163;
+border-radius: 6px;
+opacity: 0;
+visibility: hidden;
+-webkit-transition: all 0.3s ;
+-moz-transition: all 0.3s ;
+-ms-transition: all 0.3s ;
+-o-transition: all 0.3s ;
+transition: all 0.3s ; 
+}
+div.form-horizontal .radio, .checkbox{
+	padding-left: 0 !important;
+}
+div.form-horizontal .icon-user{
+	height: 22px !important;
+	padding-top: 8px;
+}
+div.form-horizontal .chzn-container .chzn-results .active-result{
+	color: #707070;
+	background-image: none;
+}
+div.form-horizontal .chzn-container .chzn-results .highlighted{
+	background-color: #cccccc;
+	color: #ffffff;
+}
+.form-horizontal .span2 h4{
+	padding: 5px;
+	background-color: #cccccc;
+	color: #ffffff;
+}
+.form-vertical .control-group .controls .chzn-container a{
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	border: 1px solid #cccccc;
+	height: 30px;
+	padding-top: 8px;
+	color: #707070;
+	border-left: 5px solid #cccccc !important;
+}
+.form-vertical .chzn-container .chzn-single div b{
+	background: #cccccc url('../images/chosen-sprite.png') no-repeat 0 0;
+}
+.form-vertical .chzn-container .chzn-single div{
+	width: 40px !important;
+}
+.form-vertical .chzn-container .chzn-results .active-result{
+	color: #707070;
+	background-image: none;
+}
+.form-vertical .chzn-container .chzn-results .highlighted{
+	background-color: #cccccc;
+	color: #ffffff;
+}
+.form-vertical .chzn-container-single .chzn-single{
+	background-image: none;
+}
+.form-vertical .chzn-container-active .chzn-single-with-drop{
+	background-color: transparent;
+}
+
+
+/* Groups */
+
+.b2j-field-sort{
+	border: 1px solid #cccccc;
+}
+.b2j-field-sort td{
+	border: 1px solid #cccccc;
+}
+
+.b2jFields{
+	display: none;
+	position:absolute;
+	background-color: #ffffff;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+.b2jFields-open-edit{
+	
+}
+.b2jFields-open-edit-tr{
+	
+}
+div.form-horizontal .b2j-group-tr{
+	background:#6c9aab !important;
+}
+div.form-horizontal .b2j-group-tr td{ 
+	background:#6c9aab !important;
+	text-transform: uppercase; 
+	font-size: 12px;
+	color: #ffffff;
+	font-weight:bold; 
+	line-height:16px;
+}
+div.form-horizontal .b2j-contact-field-title td a{
+	color: #ffffff;
+	text-transform: none; 
+}
+
+.b2jGroup{
+	display: none;
+	position:absolute;
+	background-color: #ffffff;
+	width: 100%;
+	padding-top: 45px;
+}
+.move-child{
+	position: absolute !important;
+	background-color: #ffffff;
+}
+
+.b2j-dynamic-field-name{
+	width: 380px;
+	display:inline-block;
+	color: #707070;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.b2j-dynamic-field-type{
+	color: #707070;
+}
+.b2j-group > div{
+	background:#88a771 !important;
+	line-height:16px;
+	
+	padding: 6px 0px 4px 7px;
+	height: 18px;
+}
+.b2j-group > div .group-name{
+	text-transform: uppercase; 
+	font-size: 12px;
+	color: #ffffff;	
+}
+
+.b2j-group > div .group-action{
+	float: right;
+}
+.b2j-group > div .group-action > a{
+	text-transform: none; 
+	font-size: 13px;
+	color: #ffffff !important;
+}
+div.form-horizontal .tab-pane#dynamicfields .control-group .controls input.b2j-btn{
+	width: 70px !important;
+	height: 24px !important;
+	margin-left: 20px;
+	border: none !important;	
+	color: #ffffff;
+	font-size: 12px;
+}
+.b2j-fileds-save{
+	background-color: #88a771;
+}
+.b2j-fileds-cancel{
+	background-color: #97ba7e;
+	margin-left: 213px !important;
+}
+.b2j-dynamic-field-action-links{
+	color: #ffffff !important;
+	width: 60px !important;
+	height: 20px;
+	border: none;
+}
+.group-action a:hover{
+	text-decoration: none;
+}
+.group-action .group-edit-btn{
+	padding-left: 20px;
+	margin-right: 20px;
+	background: url('../images/edit-icon.png') no-repeat 0 0;
+}
+.group-action .group-delete-btn{
+	padding-left: 20px;
+	margin-right: 15px;
+	background: url('../images/delete-icon.png') no-repeat 0 0;
+}
+.b2j-group .icon-menu{
+	color: #ffffff;
+}
+.b2j-group .fields .icon-menu{
+	color:#88a771;
+}
+.b2j-group li.fields{
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 10px;
+}
+.b2j-group li.fields:first-child{
+	border-top: 1px solid #ebebeb;
+	padding-top: 5px;
+	margin-top: 15px;
+}
+.b2j-group li.fields:last-child{
+	margin-bottom: 15px;	
+}
+.b2j-dynamic-field-action-links.edit{
+	background-color: #97ba7e;
+	margin-right: 17px;
+}
+.b2j-dynamic-field-action-links.delete{
+	background-color: #88a771;
+}
+#b2jTypeCon .control-group:first-child{
+	border-top: 1px solid #ebebeb;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+.validFocus{
+	border-color: #FF0000 !important;
+}
+.b2j_have_update a{
+	color: #97ba7e;
+}
+.b2j_have_update a:hover{
+	text-decoration: none;
+	color: #97ba7e;
+}
+.b2j_update a{
+	color: #cccccc;
+	cursor: default;
+}
+.b2j_update a:hover{
+	text-decoration: none;
+	color: #cccccc;
+	cursor: default;
+}
+.b2j_have_update{
+	background: url('../images/b2j-hava-update-icon.png') no-repeat 0 0;	
+	font-size: 14px;
+	float:right;
+	background-position: 103px 0px;
+	height: 27px;
+	padding-right: 35px;
+	padding-top: 2px;
+}
+.b2j_update{
+	background: url('../images/b2j-update-icon.png') no-repeat 0 0;	
+	font-size: 14px;
+	float:right;
+	background-position: 128px 0px;
+	height: 27px;
+	padding-right: 35px;
+	padding-top: 2px;
+}
+.b2j_update_box{
+	height:113px;
+	margin-top: 15px;
+	text-decoration: none;
+}
+.add_field_con{
+	text-align: center;	
+	margin-bottom:55px;
+	margin-top: 60px; 
+}
+.add_field_btn{
+	background: url('../images/add-icon.png') no-repeat 0 0;
+	height: 71px;	
+	padding-left: 80px;
+	padding-top: 27px;
+	padding-bottom: 27px;
+	background-position: 0px 0px;
+	font-size: 14px;
+	color: #97ba7e;
+	font-weight: bold;
+	text-decoration: none;
+}
+.add_field_con a:hover{
+	color: #97ba7e;
+	text-decoration: none;
+}
+body.com_b2jcontact .page-title {
+	background: url('../images/b2j-contact-logo.png') no-repeat 0 6px;	
+	padding-left:85px;
+}

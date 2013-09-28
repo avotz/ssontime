@@ -1,0 +1,1398 @@
+/* ------------------------------------------------------------------------
+ * Bang2Joom Contact for Joomla 3.0+
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2011-2013 Bang2Joom. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: Bang2Joom
+ * Websites: http://www.bang2joom.com
+  ------------------------------------------------------------------------
+ */
+
+div#b2jcontainer<?php echo $uid ?>.b2jcontainer
+{
+	width: <?php $w = $this->Params->get("form__width", array("text" => "", "select" => "auto")); echo $w['text'] . $w['select']; ?>;
+	padding: 30px;
+	overflow: visible; 
+	margin: auto;
+	background: #fcfcfc;
+	border: solid 1px #c2c2c2;
+	font-family: inherit;
+	color: #898989;
+	font-weight: 300;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jcontainer h2
+{
+}
+.b2jcontainer h2
+{
+font-size: 24px;
+color: #fff;
+margin: -31px -31px 30px -31px;
+padding: 15px 30px;
+background: #959595;
+font-weight: 300;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert
+{
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+	color: #c09853;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	border-width: 1px;
+	border-style: solid;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert h4
+{
+	margin: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert .close
+{
+	position: relative;
+	top: -2px;
+	right: -21px;
+	line-height: 20px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert-success
+{
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert-info
+{
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert-warning
+{
+	color: #c09853;
+	background-color: #fcf8e3;
+	border-color: #fbeed5;
+}
+
+div#b2jcontainer<?php echo $uid ?> .alert-error
+{
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+}
+
+div#b2jcontainer<?php echo $uid ?> ul.b2j_messages
+{
+	margin: 0;
+	padding: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> ul.b2j_messages > li
+{
+}
+
+
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-file,
+div#b2jcontainer<?php echo $uid ?> .qq-upload-spinner,
+div#b2jcontainer<?php echo $uid ?> .qq-upload-size,
+div#b2jcontainer<?php echo $uid ?> .qq-upload-cancel,
+div#b2jcontainer<?php echo $uid ?> .qq-upload-failed-text
+{
+	margin: 0 4px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-button span
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/upload.png") no-repeat scroll <?php echo $left ?> 10% transparent;
+	padding-<?php echo $left ?>: 24px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group
+{
+	margin-bottom: 10px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-inline .control-group,
+div#b2jcontainer<?php echo $uid ?> .b2jform-inline .control-group label.control-label
+{
+	margin-right: 16px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group .checkbox
+{
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	max-width: 100%;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2j_form input[type="text"],
+div#b2jcontainer<?php echo $uid ?> .b2j_form textarea
+{
+	color: #898989;
+	background-color: #ffffff;
+	border: solid 1px #c2c2c2;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	line-height: 20px;
+	padding: 4px 10px;
+	margin: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2j_form input[type="text"]:hover,
+div#b2jcontainer<?php echo $uid ?> .b2j_form textarea:hover,
+div#b2jcontainer<?php echo $uid ?> .b2j_form input[type="text"]:focus,
+div#b2jcontainer<?php echo $uid ?> .b2j_form textarea:focus
+{
+	background-color: #f9f9f9;
+	box-shadow: 0 0 3px 0 #c2c2c2;
+	border-color: #CECECE;
+}
+
+div#b2jcontainer<?php echo $uid ?> textarea,
+div#b2jcontainer<?php echo $uid ?> input[type="text"],
+div#b2jcontainer<?php echo $uid ?> input[type="password"],
+div#b2jcontainer<?php echo $uid ?> input[type="datetime"],
+div#b2jcontainer<?php echo $uid ?> input[type="datetime-local"],
+div#b2jcontainer<?php echo $uid ?> input[type="date"],
+div#b2jcontainer<?php echo $uid ?> input[type="month"],
+div#b2jcontainer<?php echo $uid ?> input[type="time"],
+div#b2jcontainer<?php echo $uid ?> input[type="week"],
+div#b2jcontainer<?php echo $uid ?> input[type="number"],
+div#b2jcontainer<?php echo $uid ?> input[type="email"],
+div#b2jcontainer<?php echo $uid ?> input[type="url"],
+div#b2jcontainer<?php echo $uid ?> input[type="search"],
+div#b2jcontainer<?php echo $uid ?> input[type="tel"],
+div#b2jcontainer<?php echo $uid ?> input[type="color"]
+{
+	background-color: #ffffff;
+	border: 1px solid #aaaaaa;
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	resize: none;
+	max-width: 100%;
+}
+div#b2jcontainer<?php echo $uid ?> input[type="text"],
+div#b2jcontainer<?php echo $uid ?> input[type="password"],
+div#b2jcontainer<?php echo $uid ?> input[type="datetime"],
+div#b2jcontainer<?php echo $uid ?> input[type="datetime-local"],
+div#b2jcontainer<?php echo $uid ?> input[type="date"],
+div#b2jcontainer<?php echo $uid ?> input[type="month"],
+div#b2jcontainer<?php echo $uid ?> input[type="time"],
+div#b2jcontainer<?php echo $uid ?> input[type="week"],
+div#b2jcontainer<?php echo $uid ?> input[type="number"],
+div#b2jcontainer<?php echo $uid ?> input[type="email"],
+div#b2jcontainer<?php echo $uid ?> input[type="url"],
+div#b2jcontainer<?php echo $uid ?> input[type="search"],
+div#b2jcontainer<?php echo $uid ?> input[type="tel"],
+div#b2jcontainer<?php echo $uid ?> input[type="color"]
+{
+	height: 28px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group.success > label,
+div#b2jcontainer<?php echo $uid ?> .control-group.success .checkbox,
+div#b2jcontainer<?php echo $uid ?> .control-group.success .radio,
+div#b2jcontainer<?php echo $uid ?> .control-group.success input,
+div#b2jcontainer<?php echo $uid ?> .control-group.success select,
+div#b2jcontainer<?php echo $uid ?> .control-group.success textarea,
+div#b2jcontainer<?php echo $uid ?> .control-group.success a.chzn-single /* Add the chosen as well */
+{
+	color: #468847;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group.success input,
+div#b2jcontainer<?php echo $uid ?> .control-group.success select,
+div#b2jcontainer<?php echo $uid ?> .control-group.success textarea,
+div#b2jcontainer<?php echo $uid ?> .control-group.success a.chzn-single /* Add the chosen as well */
+{
+	border-color: #468847;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group.error > label,
+div#b2jcontainer<?php echo $uid ?> .control-group.error .checkbox,
+div#b2jcontainer<?php echo $uid ?> .control-group.error .radio,
+div#b2jcontainer<?php echo $uid ?> .control-group.error input,
+div#b2jcontainer<?php echo $uid ?> .control-group.error select,
+div#b2jcontainer<?php echo $uid ?> .control-group.error textarea,
+div#b2jcontainer<?php echo $uid ?> .control-group.error a.chzn-single /* Add the chosen as well */
+{
+	color: #b94a48;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group.error input,
+div#b2jcontainer<?php echo $uid ?> .control-group.error select,
+div#b2jcontainer<?php echo $uid ?> .control-group.error textarea,
+div#b2jcontainer<?php echo $uid ?> .control-group.error a.chzn-single /* Add the chosen as well */
+{
+	border-color: #b94a48;
+}
+
+div#b2jcontainer<?php echo $uid ?> textarea:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="text"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="password"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="datetime"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="datetime-local"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="date"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="month"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="time"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="week"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="number"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="email"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="url"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="search"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="tel"]:focus,
+div#b2jcontainer<?php echo $uid ?> input[type="color"]:focus
+{
+	border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+	outline: thin dotted \9;
+	/* IE6-9 */
+
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.control-group{
+	max-width: 100%;
+}
+div#b2jcontainer<?php echo $uid ?> .control-group.error input:focus,
+div#b2jcontainer<?php echo $uid ?> .control-group.error select:focus,
+div#b2jcontainer<?php echo $uid ?> .control-group.error textarea:focus
+{
+	border-color: #953b39;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+}
+
+div#b2jcontainer<?php echo $uid ?> .control-group.success input:focus,
+div#b2jcontainer<?php echo $uid ?> .control-group.success select:focus,
+div#b2jcontainer<?php echo $uid ?> .control-group.success textarea:focus
+{
+	border-color: #356635;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+}
+
+div#b2jcontainer<?php echo $uid ?> span.help-block
+{
+	font-size: 80%;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jcaptchafieldcontainer
+{
+padding: 0;
+float: left;
+margin-right: 8px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jcaptchainputcontainer
+{
+padding: 0;
+float: left;
+margin-right: 8px;
+}
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .b2jcaptchainputcontainer
+{
+padding: 0;
+float: left;
+margin-right: 8px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jcaptcha-reload-container
+{
+padding: 0;
+float: left;
+margin-right: 8px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2j_captcha_img
+{
+	padding: 4px;
+	border: 1px solid #c0c0c0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> span.qq-upload-size
+{
+	background-image: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/bootstrap/drive.png");
+}
+
+div#b2jcontainer<?php echo $uid ?> ul.qq-upload-list > li
+{
+	margin: 4px 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-file
+{
+	background-image: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/clip-16.png");
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-failed-text
+{
+	color: #b94a48;
+	background-image: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/bootstrap/cross.png");
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-success-text
+{
+	color: #468847;
+	background-image: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/bootstrap/checkmark.png");
+}
+
+.b2j_error_message
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/error-16.png") no-repeat scroll <?php echo $left ?> center transparent;
+	padding: 0 20px;
+}
+
+
+#b2jcontainer<?php echo $uid ?> ul.qq-upload-list li:first-child{
+border-top: solid 1px #C2C2C2;
+}
+#b2jcontainer<?php echo $uid ?> .help-block{
+    margin:0;
+}
+#b2jcontainer<?php echo $uid ?> ul.qq-upload-list > li {
+
+}
+#b2jcontainer<?php echo $uid ?> .qq-upload-list span:not(.qq-upload-spinner) {
+	padding: 0 10px 0 20px;
+}
+.b2j_clearfix{
+    height:0 !important;
+    clear:both !important;
+}
+/* chosen start */
+	div#b2jcontainer<?php echo $uid ?> .chzn-container
+{
+	font-size: 13px;
+	position: relative;
+	display: inline-block;
+	zoom: 1;
+	width: auto !important;
+	*display: inline;
+	max-width: 100%;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-drop
+{
+	background: #fff;
+	border-top: 0;
+	position: absolute;
+	top: 29px;
+	left: 0;
+	-webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+	-moz-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+	-o-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+	box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+	z-index: 1010;
+border: 1px solid #c2c2c2;
+border-top: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
+	background-color: #ffffff;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #c2c2c2;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 0 0 8px;
+	color: #898989;
+	text-decoration: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-default
+{
+	color: #999;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single span
+{
+	margin-right: 26px;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single abbr
+{
+	display: block;
+	position: absolute;
+	right: 26px;
+	top: 6px;
+	width: 12px;
+	height: 13px;
+	font-size: 1px;
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") right top no-repeat;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single abbr:hover
+{
+	background-position: right -11px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single.chzn-disabled .chzn-single abbr:hover
+{
+	background-position: right top;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	height: 100%;
+	width: 18px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div b
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat 0 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-search
+{
+	padding: 3px 4px;
+	position: relative;
+	margin: 0;
+	white-space: nowrap;
+	z-index: 1010;
+	text-align: center;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-search input
+{
+	background: #fff url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat 100% -22px;
+	margin: 1px 0;
+	padding: 4px 20px 4px 5px;
+	outline: 0;
+	border: 1px solid #aaa;
+	font-family: sans-serif;
+	font-size: 1em;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-drop
+{
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100% !important;
+}
+
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single-nosearch .chzn-search input
+{
+	position: absolute;
+	display: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices
+{
+	background-color: #fff;
+	border: 1px solid #aaa;
+	margin: 0;
+	padding: 0;
+	cursor: text;
+	overflow: hidden;
+	height: auto !important;
+	height: 1%;
+	position: relative;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices li
+{
+	float: left;
+	list-style: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-field
+{
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-field input
+{
+	color: #666;
+	background: transparent !important;
+	border: 0 !important;
+	font-family: sans-serif;
+	font-size: 100%;
+	height: 15px;
+	padding: 5px;
+	margin: 1px 0;
+	outline: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-field .default
+{
+	color: #999;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-choice
+{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #e4e4e4;
+	-webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+	color: #333;
+	border: 1px solid #aaaaaa;
+	line-height: 13px;
+	padding: 3px 20px 3px 5px;
+	margin: 3px 0 3px 5px;
+	position: relative;
+	cursor: default;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-choice-focus
+{
+	background: #d4d4d4;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-choice .search-choice-close
+{
+	display: block;
+	position: absolute;
+	right: 3px;
+	top: 4px;
+	width: 12px;
+	height: 13px;
+	font-size: 1px;
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") right top no-repeat;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover
+{
+	background-position: right -11px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-choices .search-choice-focus .search-choice-close
+{
+	background-position: right -11px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results
+{
+	margin: 0 -5px;
+	max-height: 240px;
+	padding: 0;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	color: #898989;	
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-results
+{
+	margin: -1px 0 0;
+	padding: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results li
+{
+	display: none;
+	line-height: 15px;
+	padding: 5px 6px;
+	margin: 0;
+	list-style: none;
+	background: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results .active-result
+{
+	cursor: pointer;
+	display: list-item;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results .highlighted
+{
+	background-color: #898989;
+	color: #fff;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results li em
+{
+	background: #feffde;
+	font-style: normal;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results .highlighted em
+{
+	background: transparent;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results .no-results
+{
+	background: #f4f4f4;
+	display: list-item;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results .group-result
+{
+	cursor: default;
+	color: #999;
+	font-weight: bold;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results .group-option
+{
+	padding-left: 15px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-multi .chzn-drop .result-selected
+{
+	display: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results-scroll
+{
+	background: white;
+	margin: 0 4px;
+	position: absolute;
+	text-align: center;
+	width: 321px;
+	z-index: 1;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results-scroll span
+{
+	display: inline-block;
+	height: 17px;
+	text-indent: -5000px;
+	width: 9px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results-scroll-down
+{
+	bottom: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results-scroll-down span
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat -4px -3px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container .chzn-results-scroll-up span
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat -22px -3px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single
+{
+
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single-with-drop
+{
+	border: 1px solid #c2c2c2;
+	-webkit-box-shadow: 0 1px 0 #fff inset;
+	-moz-box-shadow: 0 1px 0 #fff inset;
+	-o-box-shadow: 0 1px 0 #fff inset;
+	box-shadow: 0 1px 0 #fff inset;
+	background-color: #fff;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-bottomleft: 0;
+	-moz-border-radius-bottomright: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single-with-drop div
+{
+	background: transparent;
+	border-left: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single-with-drop div b
+{
+	background-position: -18px 1px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-choices
+{
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	-o-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	border: 1px solid #5897fb;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-choices .search-field input
+{
+	color: #111 !important;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-disabled
+{
+	cursor: default;
+	opacity: 0.5 !important;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-disabled .chzn-single
+{
+	cursor: default;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-disabled .chzn-choices .search-choice .search-choice-close
+{
+	cursor: default;
+}
+
+/* @group Right to Left */
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl
+{
+	text-align: right;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-single
+{
+	padding: 0 8px 0 0;
+	overflow: visible;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-single span
+{
+	margin-left: 26px;
+	margin-right: 0;
+	direction: rtl;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-single div
+{
+	left: 3px;
+	right: auto;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-single abbr
+{
+	left: 26px;
+	right: auto;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-choices .search-field input
+{
+	direction: rtl;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-choices li
+{
+	float: right;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-choices .search-choice
+{
+	padding: 3px 5px 3px 19px;
+	margin: 3px 5px 3px 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-choices .search-choice .search-choice-close
+{
+	left: 4px;
+	right: auto;
+	background-position: right top;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl.chzn-container-single .chzn-results
+{
+	margin: 0 0 4px 4px;
+	padding: 0 4px 0 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-results .group-option
+{
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl.chzn-container-active .chzn-single-with-drop div
+{
+	border-right: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-rtl .chzn-search input
+{
+	background: #fff url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat -38px -22px;
+	padding: 4px 5px 4px 20px;
+	direction: rtl;
+}
+
+/* chosen end */
+/* Fixes a bug affecting both twitter bootstrap 2.1 and Joomla Protostar 1.0 template which is derived from bootstrap */
+.control-group.error .checkbox, .control-group.error .radio,
+.control-group.success .checkbox, .control-group.success .radio
+{
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+div#b2jcontainer<?php echo $uid ?> div.alert ul
+{
+	list-style-type: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> div.alert li
+{
+	background: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .required, div#b2jcontainer<?php echo $uid ?> .asterisk
+{
+	color: #b94a48;
+	font-weight: bold;
+}
+
+div#b2jcontainer<?php echo $uid ?> .required:after, div#b2jcontainer<?php echo $uid ?> .asterisk:after
+{
+	content: "*";
+}
+
+div#b2jcontainer<?php echo $uid ?> input[type="text"],
+div#b2jcontainer<?php echo $uid ?> textarea
+{
+	padding: 4px 5px;
+}
+
+div#b2jcontainer<?php echo $uid ?> div.b2jcaptcha-reload-container img
+{
+	cursor: pointer;
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-button-caption
+{
+	vertical-align: top;
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-button-focus
+{
+	outline: 1px dotted black;
+}
+
+div#b2jcontainer<?php echo $uid ?> ul.qq-upload-list
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> ul.qq-upload-list > li
+{
+	list-style: none;
+	padding: 10px 0;
+	background: #FFF;
+	border: solid 1px #C2C2C2;
+	border-top: 0;
+	margin: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .qq-upload-list span
+{
+	display: inline-block;
+	white-space: nowrap;
+	padding: 0 20px;
+	background-repeat: no-repeat;
+	background-position: <?php echo $left ?> center;
+}
+
+div#b2jcontainer<?php echo $uid ?> li span.qq-upload-failed-text,
+div#b2jcontainer<?php echo $uid ?> li span.qq-upload-success-text
+{
+	display: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> li.qq-upload-fail span.qq-upload-failed-text,
+div#b2jcontainer<?php echo $uid ?> li.qq-upload-success span.qq-upload-success-text
+{
+	display: inline-block;
+}
+
+
+div#b2jcontainer<?php echo $uid ?> span.qq-upload-spinner
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/loading.gif");
+	width: 15px;
+	height: 15px;
+	vertical-align: text-bottom;
+	padding: 0;
+	margin: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> span.help-block
+{
+	display: block;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jcaptchafieldcontainer img
+{
+	max-width: none;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jcaptchainputcontainer
+{
+	float: <?php echo $left ?>;
+}
+
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div
+{
+	right: auto;
+	left: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div b
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat 0 0;
+}
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div b
+{
+	background-position: -2px 1px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div
+{
+	width: 26px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single-with-drop div b
+{
+	background-position: -28px 1px;
+}
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single-with-drop div b
+{
+	background-position: -30px 1px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single
+{
+
+	width: <?php echo $this->Params->get("dropdown__width") ?>px;
+	padding: 0 10px;
+}
+
+div#b2jcontainer<?php echo $uid ?> div.chzn-container
+{
+	
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-drop
+{
+	width: <?php echo $this->Params->get("labels__width")+10 ?>px;
+	padding: 0 5px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-active .chzn-single-with-drop
+{
+
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-search input
+{
+	background: #fff url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") no-repeat 100% -26px;
+	padding: 4px 20px 4px 5px;
+}
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-search input
+{
+	background-position: -45px -26px;
+	padding: 4px 5px 4px 20px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single abbr
+{
+	right: 30px;
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") right top no-repeat;
+}
+
+div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single abbr:hover
+{
+	background-position: right -11px;
+}
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single abbr
+{
+	right: auto;
+	left: 30px;
+}
+
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close
+{
+	background: url("<?php echo $juri_root ?>/media/com_b2jcontact/images/ui.png") right top no-repeat;
+}
+
+html[dir="rtl"] div#b2jcontainer<?php echo $uid ?> .chzn-container-single .chzn-single div
+{
+	right: auto;
+	left: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> .btn
+{
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	*margin-left: .3em;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	*zoom: 1;
+	background: #959595;
+	color: #FFF;
+	text-shadow: none;
+	border: 0;
+	line-height: 30px;
+	padding: 0 10px;
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+
+div#b2jcontainer<?php echo $uid ?> .btn:first-child
+{
+	*margin-left: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> button.btn,
+div#b2jcontainer<?php echo $uid ?> input[type="submit"].btn
+{
+	*padding-top: 3px;
+	*padding-bottom: 3px;
+}
+
+div#b2jcontainer<?php echo $uid ?> button.btn::-moz-focus-inner,
+div#b2jcontainer<?php echo $uid ?> input[type="submit"].btn::-moz-focus-inner
+{
+	padding: 0;
+	border: 0;
+}
+
+div#b2jcontainer<?php echo $uid ?> label
+{
+	display: block;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-inline .control-group label
+{
+	display: inline-block;
+}
+
+div#b2jcontainer<?php echo $uid ?> input[type="radio"],
+div#b2jcontainer<?php echo $uid ?> input[type="checkbox"]
+{
+	margin: 4px 0 0;
+	margin-top: 1px  \9;
+	*margin-top: 0;
+	line-height: normal;
+	cursor: pointer;
+}
+
+div#b2jcontainer<?php echo $uid ?> input[type="file"],
+div#b2jcontainer<?php echo $uid ?> input[type="image"],
+div#b2jcontainer<?php echo $uid ?> input[type="submit"],
+div#b2jcontainer<?php echo $uid ?> input[type="reset"],
+div#b2jcontainer<?php echo $uid ?> input[type="button"],
+div#b2jcontainer<?php echo $uid ?> input[type="radio"],
+div#b2jcontainer<?php echo $uid ?> input[type="checkbox"]
+{
+	width: auto;
+}
+
+div#b2jcontainer<?php echo $uid ?> select,
+div#b2jcontainer<?php echo $uid ?> textarea,
+div#b2jcontainer<?php echo $uid ?> input[type="text"],
+div#b2jcontainer<?php echo $uid ?> input[type="password"],
+div#b2jcontainer<?php echo $uid ?> input[type="datetime"],
+div#b2jcontainer<?php echo $uid ?> input[type="datetime-local"],
+div#b2jcontainer<?php echo $uid ?> input[type="date"],
+div#b2jcontainer<?php echo $uid ?> input[type="month"],
+div#b2jcontainer<?php echo $uid ?> input[type="time"],
+div#b2jcontainer<?php echo $uid ?> input[type="week"],
+div#b2jcontainer<?php echo $uid ?> input[type="number"],
+div#b2jcontainer<?php echo $uid ?> input[type="email"],
+div#b2jcontainer<?php echo $uid ?> input[type="url"],
+div#b2jcontainer<?php echo $uid ?> input[type="search"],
+div#b2jcontainer<?php echo $uid ?> input[type="tel"],
+div#b2jcontainer<?php echo $uid ?> input[type="color"]
+{
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+div#b2jcontainer<?php echo $uid ?> input,
+div#b2jcontainer<?php echo $uid ?> label.checkbox
+{
+	width: <?php echo $this->Params->get("text__width") ?>px;
+}
+
+div#b2jcontainer<?php echo $uid ?> textarea
+{
+	width: <?php echo $this->Params->get("textarea__width") ?>px;
+	height: <?php $h = $this->Params->get("textarea__height", array("text" => "180", "select" => "px")); echo $h['text'] . $h['select']; ?>;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-compact .control-group,
+div#b2jcontainer<?php echo $uid ?> .b2jform-extended .control-group
+{
+	float: <?php echo $left ?>;
+	width:100%;
+	*zoom: 1;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-inline .control-group
+{
+	display: inline-block;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-compact .control-label,
+div#b2jcontainer<?php echo $uid ?> .b2jform-extended .control-label
+{
+	float: <?php echo $left ?>;
+	width: <?php echo $this->Params->get("labels__width") ?>px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-extended .control-label
+{
+	text-align: <?php echo $left ?>;
+	margin-<?php echo $right ?>: 16px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-compact .control-label
+{
+	text-align: <?php echo $right ?>;
+	margin-<?php echo $right ?>: 16px;
+}
+
+#b2jcontainer<?php echo $uid ?> .b2jform-compact label.control-label ,
+#b2jcontainer<?php echo $uid ?> .b2jform-extended label.control-label {
+display: block;
+line-height: 20px;
+margin: 0 10px 0 0;
+padding: 4px 0;
+}
+/* Fields container */
+div#b2jcontainer<?php echo $uid ?> .b2jform-compact .controls,
+div#b2jcontainer<?php echo $uid ?> .b2jform-extended .controls
+{
+	float: <?php echo $left ?>;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-centered input,
+div#b2jcontainer<?php echo $uid ?> .b2jform-centered textarea,
+div#b2jcontainer<?php echo $uid ?> .b2jform-centered .chzn-container
+{
+	display: block;
+	margin: 0 auto;
+}
+
+div#b2jcontainer<?php echo $uid ?> .radio,
+div#b2jcontainer<?php echo $uid ?> .checkbox
+{
+	min-height: 20px;
+	padding-<?php echo $left ?>: 20px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .radio input[type="radio"],
+div#b2jcontainer<?php echo $uid ?> .checkbox input[type="checkbox"]
+{
+	float: <?php echo $left ?>;
+	margin-<?php echo $left ?>: -20px;
+}
+
+div#b2jcontainer<?php echo $uid ?> .controls
+{
+	margin: 0;
+	display: block;
+	float: none;
+	max-width: 100%;
+}
+
+div#b2jcontainer<?php echo $uid ?> .b2jform-inline .controls
+{
+	display:	inline-block;
+}
+/* glDatePicker start */
+.gldp-flatwhite {
+	position: absolute;
+	font-family: 'helvetica';
+}
+
+.gldp-flatwhite .core {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: relative;
+	float: left;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	color: #222;
+	background: #ffffff;
+}
+
+.gldp-flatwhite .border {
+	border-style: solid;
+	border-width: 0;
+	border-color: #fff;
+}
+
+.gldp-flatwhite .monyear,
+.gldp-flatwhite .monyear select {
+	font-size: 12px !important;
+	font-weight: bold;
+	background: #eee;
+}
+
+.gldp-flatwhite .monyear span {
+	margin: 0 5px 0 5px;
+}
+
+.gldp-flatwhite .prev-arrow,
+.gldp-flatwhite .next-arrow {
+	color: #666;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.gldp-flatwhite .prev-arrow:active,
+.gldp-flatwhite .next-arrow:active {
+	color: #000;
+}
+
+.gldp-flatwhite .prev-arrow-off,
+.gldp-flatwhite .next-arrow-off {
+	color: #000;
+	opacity: 0.15;
+}
+
+.gldp-flatwhite .dow {
+	color: #222;
+	font-size: 12px;
+	cursor: wait !important;
+	background: #eee;
+}
+
+.gldp-flatwhite .mon,
+.gldp-flatwhite .tue,
+.gldp-flatwhite .wed,
+.gldp-flatwhite .thu,
+.gldp-flatwhite .fri {
+	font-size: 12px;
+}
+
+.gldp-flatwhite .sat,
+.gldp-flatwhite .sun {
+	color: #888;
+	font-size: 12px;
+}
+
+.gldp-flatwhite .outday {
+	color: #aaa !important;
+}
+
+.gldp-flatwhite .mon:hover,
+.gldp-flatwhite .tue:hover,
+.gldp-flatwhite .wed:hover,
+.gldp-flatwhite .thu:hover,
+.gldp-flatwhite .fri:hover,
+.gldp-flatwhite .sat:hover,
+.gldp-flatwhite .sun:hover {
+	background: #eee;
+}
+
+.gldp-flatwhite .noday {
+	color: #bbb;
+	font-weight: normal;
+	cursor: wait !important;
+	background: #ddd;
+	font-size: 12px;
+}
+
+.gldp-flatwhite .selected {
+	color: #fff;
+	font-size: 12px;
+	border-color: #888;
+	background: #aaa;
+}
+
+.gldp-flatwhite .today {
+	color: #fff;
+	font-size: 12px;
+	border-color: #000;
+	background: #222;
+}
+
+.gldp-flatwhite .special {
+	color: #fff;
+	font-size: 12px;
+	border-color: #444;
+	background: #666;
+}
+/* glDatePicer end */

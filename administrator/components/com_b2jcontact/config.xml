@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/administrator/components/com_b2jcontact/models/fields">
+	<fieldset name="JACTION_ADMIN" label="JACTION_ADMIN">
+		<field type="b2jenvironment"/>
+	</fieldset>
+
+	<fieldset name="adminemail" label="COM_B2JCONTACT_CONFIG_EMAIL_OPTIONS">
+		<field type="b2jheader"  default="COM_B2JCONTACT_CONFIG_EMAIL_SITE_OWNER_LBL" />
+		<field type="b2jheader"  label="COM_B2JCONTACT_CONFIG_EMAIL_SITE_OWNER_DSC" />
+		<field name="adminemailfrom" type="b2jemailchooser" label="COM_B2JCONTACT_CONFIG_FROM_LBL" description="COM_B2JCONTACT_CONFIG_FROM_DSC" default="asdasd" onchange="EmailChooserChange(this);" onkeyup="EmailChooserChange(this);">
+			<option value="submitter" class="none">COM_B2JCONTACT_SUBMITTER</option>
+			<option value="admin" class="none">COM_B2JCONTACT_ADMIN</option>
+			<option value="custom" class="">COM_B2JCONTACT_CUSTOM_DATA</option>
+		</field>
+		<field name="adminemailreplyto" type="b2jemailchooser" label="COM_B2JCONTACT_CONFIG_REPLYTO_LBL" description="COM_B2JCONTACT_CONFIG_REPLYTO_DSC" onchange="EmailChooserChange(this);" onkeyup="EmailChooserChange(this);">
+			<option value="submitter" class="none">COM_B2JCONTACT_SUBMITTER</option>
+			<option value="admin" class="none">COM_B2JCONTACT_ADMIN</option>
+			<option value="custom" class="">COM_B2JCONTACT_CUSTOM_DATA</option>
+		</field>
+		<field type="b2jheader"  default="COM_B2JCONTACT_CONFIG_EMAIL_VISITOR_LBL" />
+		<field type="b2jheader"  label="COM_B2JCONTACT_CONFIG_EMAIL_VISITOR_DSC" />
+		<field name="submitteremailfrom" type="b2jemailchooser" label="COM_B2JCONTACT_CONFIG_FROM_LBL" description="COM_B2JCONTACT_CONFIG_FROM_DSC" onchange="EmailChooserChange(this);" onkeyup="EmailChooserChange(this);">
+			<option value="submitter" class="none">COM_B2JCONTACT_SUBMITTER</option>
+			<option value="admin" class="none">COM_B2JCONTACT_ADMIN</option>
+			<option value="custom" class="">COM_B2JCONTACT_CUSTOM_DATA</option>
+		</field>
+		<field name="submitteremailreplyto" type="b2jemailchooser" label="COM_B2JCONTACT_CONFIG_REPLYTO_LBL" description="COM_B2JCONTACT_CONFIG_REPLYTO_DSC" onchange="EmailChooserChange(this);" onkeyup="EmailChooserChange(this);">
+			<option value="submitter" class="none">COM_B2JCONTACT_SUBMITTER</option>
+			<option value="admin" class="none">COM_B2JCONTACT_ADMIN</option>
+			<option value="custom" class="">COM_B2JCONTACT_CUSTOM_DATA</option>
+		</field>
+		<field type="b2jheader"  default="COM_B2JCONTACT_ADVANCED_EMAIL_VERIFICATION_LBL" />
+		<field type="b2jheader"  label="COM_B2JCONTACT_ADVANCED_EMAIL_VERIFICATION_DSC" />
+		<field name="use_dns" type="list" label="COM_B2JCONTACT_EMAIL_DOMAIN_VERIFICATION_LBL" description="COM_B2JCONTACT_EMAIL_DOMAIN_VERIFICATION_DSC">
+			<option value="disabled">JNO</option>
+			<option value="dns_check">JYES</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" filter="rules" component="com_b2jcontact" section="component">
+			<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC"/>
+			<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC"/>
+		</field>
+	</fieldset>
+
+</config>

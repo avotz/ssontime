@@ -1,0 +1,118 @@
+.b2j_contact_install{
+	margin-top: 0;
+}
+.install_logo {
+	float: left;
+	margin: 0 20px 20px 0;  
+}
+
+html[dir="rtl"] .install_logo {
+	float: right;
+}
+
+.install_container {
+	display: table;
+}
+
+.install_row {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #d5d5d5;
+	padding-bottom: 10px;
+}
+.install_row:last-child {
+	border-bottom: none;
+}
+
+.install_icon {
+	display: inline-block;
+	font-size: 14px;
+	color: #505050;
+	width: 340px;
+}
+
+html[dir="rtl"] .install_icon {
+	background-position: right 50%;
+}
+
+
+.install_title {
+	line-height: 40px;
+	display: table-cell;
+	color: #4e4e4e;
+	font-size: 30px;
+	font-weight: normal;
+}
+.install_desc {
+	font-size: 14px;
+	color: #505050;
+}
+div.clear{
+	clear:both;
+}
+
+.install_component {
+	background: url("../../../../media/com_b2jcontact/images/com-install-icon.png") no-repeat 0 0;
+	display: inline-block;
+	padding-left: 30px;
+	height: 22px;
+}
+
+.install_module {
+	background: url("../../../../media/com_b2jcontact/images/module-install-icon.png") no-repeat 0 0;
+	display: inline-block;
+	padding-left: 30px;
+	height: 22px;
+}
+
+.install_library {
+	background: url("../../../../media/com_b2jcontact/images/lib-install-icon.png") no-repeat 0 0;
+	display: inline-block;
+	padding-left: 30px;
+	height: 22px;
+}
+
+.install_success {
+	background: url("../../../../media/com_b2jcontact/images/success-install-icon.png") no-repeat 0 0;
+	color: #20b020;
+	font-size: 14px;
+	color: #97ba7e;
+	padding-left: 21px;
+}
+
+.install_error {
+	background: url("../../../../media/com_b2jcontact/images/error-install-icon.png") no-repeat 0 0;
+	color: #ee8b8b;
+	font-size: 14px;
+	padding-left: 21px;
+}
+.install_donate {
+	background: url("../../../../media/com_b2jcontact/images/donate-icon.png") no-repeat 0 0;
+}
+.install_type_title{
+	font-size: 14px;
+	display: inline-block;
+	color: #505050;
+}
+.install_status{
+	display: inline-block;
+	float: right;
+	background-position: 2px 4px;
+}
+.install_social_box{
+	background-color: #f7f7f7;
+	height: 37px;
+	padding: 10px 10px 0 10px;
+}
+.b2j-fb{
+	display:inline-block;
+}
+.b2j-twitter{
+	position: relative;
+    display: inline-block;
+    padding-left:20px;
+    white-space: nowrap;
+}
+.b2j-google{
+	display: inline-block;
+	padding-left: 20px;
+}

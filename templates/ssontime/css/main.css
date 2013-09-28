@@ -7,7 +7,7 @@
 .icon-facebook:before{content:"\e004"}
 .icon-twitter:before{content:"\e003"}
 html,body{background:url("../img/bg_motivo.jpg");font-family:'Droid Sans',sans-serif;font-size:14px}
-.btn{background:c0c0c0;padding:1em;display:block;width:20%;font-size:1.6em;text-shadow:0 1px 2px rgba(0,0,0,0.5);color:#fff;text-decoration:none}
+.btn{background:c0c0c0;padding:1em;font-size:1.6em;text-shadow:0 1px 2px rgba(0,0,0,0.5);color:#fff;text-decoration:none}
 .btn_verde{background:#bed948}
 .btn_azul{background:#3b5998}
 .btn_celeste{background:#0aaeee}
@@ -39,6 +39,7 @@ header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
 #content #tours,#content #rates,#content #location{display:inline-block;vertical-align:top;cursor:pointer}
 #content #tours:hover,#content #rates:hover,#content #location:hover{background:#b1b1b1}
 #content .descripcion-tours,#content .descripcion-rates,#content .descripcion-locations{display:none}
+#content .item-page{padding:30px;background:#fff;border:1px solid #c2c2c2}
 #content .content-home{text-align:center;}
 #content .content-home h3{font-size:2em;font-weight:400;margin-top:90px;margin-bottom:0}
 #content .content-home h3 + p{font-size:1.3em;margin-top:0}
@@ -62,3 +63,4 @@ footer #redes ul li .icon-facebook,footer #redes ul li .icon-twitter{color:#fff;
 footer #redes ul li .icon-facebook{background:#3b5998}
 footer #redes ul li .icon-twitter{background:#0aaeee}
 footer #copyright{margin:20px auto;text-align:center;display:block;font-size:12px;color:#c3c3c3}
+.b2jcontainer h2{background:#bed948}

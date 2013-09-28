@@ -35,9 +35,18 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
 	<jdoc:include type="head" />
     <link rel="icon" type="image/png" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/favicon_32x32.ico">
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/modernizr-2.6.2.min.js"></script>
-     
-     
+    
+ <?php if ($itemid == 112):?>
+        <style type="text/css">
+           
+            #content .item-page{
+                border: none;
+                background: transparent;
+                padding: 0;
+            }
+        </style>
+    <?php endif; ?>
+     <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body class="<?php echo ($itemid ? ' bgid-' . $itemid : '')?>">

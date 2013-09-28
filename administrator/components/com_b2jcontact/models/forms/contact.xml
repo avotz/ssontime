@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="/administrator/components/com_b2jcontact/models/fields">
+		<field name="id"
+			type="text"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC"
+			size="10"
+			default="0"
+			readonly="true"
+			class="readonly"
+		/>
+
+		<field name="name"
+			type="text"
+			label="COM_B2JCONTACT_FIELD_NAME_LABEL"
+			description="COM_B2JCONTACT_FIELD_NAME_DESC"
+			class="inputbox"
+			size="30"
+			required="true"
+		 />
+
+		<field name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC"
+			class="inputbox"
+			size="30"
+		/>
+		<field id="published"
+			name="published"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox span12 small"
+			size="1"
+			default="1"
+		>
+			<option value="1">
+				JPUBLISHED</option>
+			<option value="0">
+				JUNPUBLISHED</option>
+			<option value="-2">
+				JTRASHED</option>
+
+		</field>
+
+		<field name="access"
+			type="accesslevel"
+			label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC"
+			class="inputbox span12 small"
+			size="1"
+		/>
+
+		<field name="created_by" type="user"
+			label="JGLOBAL_FIELD_CREATED_BY_LABEL" description="COM_B2JCONTACT_FIELD_CREATED_BY_DESC" />
+
+		<field name="created_by_alias" type="text"
+			label="COM_B2JCONTACT_FIELD_CREATED_BY_ALIAS_LABEL" description="COM_B2JCONTACT_FIELD_CREATED_BY_ALIAS_DESC"
+			class="inputbox" size="20" />
+
+		<field name="created" type="calendar" label="COM_B2JCONTACT_FIELD_CREATED_LABEL"
+			description="COM_B2JCONTACT_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="modified" type="calendar" class="readonly"
+			label="JGLOBAL_FIELD_MODIFIED_LABEL" description="COM_B2JCONTACT_FIELD_MODIFIED_DESC"
+			size="22" readonly="true" format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="modified_by" type="user"
+		label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+		class="readonly"
+		readonly="true"
+		filter="unset"/>
+
+		<field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+			description="COM_B2JCONTACT_FIELD_LANGUAGE_DESC" class="inputbox span12 small"
+		>
+			<option value="*">JALL</option>
+		</field>
+	</fieldset>
+	<fields name="params" addfieldpath="/administrator/components/com_b2jcontact/models/fields">
+		  <fieldset name="basic">
+			<field type="b2jenvironment"/>
+			<field type="b2jtranschecker"/>
+			<field type="b2jheader" default="COM_B2JCONTACT_EMAIL_OPTIONS_LBL" color="basic"/>
+			<field name="to_address" type="b2jtext" size="26" label="COM_B2JCONTACT_EMAIL_TO" description="COM_B2JCONTACT_EMAIL_TO_DSC" wizard="COM_B2JCONTACT_TOADDRESS_DFLT" required="true"/>
+			<field name="cc_address" type="text" size="26" label="COM_B2JCONTACT_EMAIL_CC_LBL" description="COM_B2JCONTACT_EMAIL_CC_DSC"/>
+			<field name="bcc_address" type="text" size="26" label="COM_B2JCONTACT_EMAIL_BCC_LBL" description="COM_B2JCONTACT_EMAIL_BCC_DSC"/>
+			<field name="email_subject" type="b2jtext" size="26" label="COM_B2JCONTACT_SUBJECT" description="COM_B2JCONTACT_EMAIL_SUBJECT_DSC" wizard="COM_B2JCONTACT_SUBJECT_DFLT"/>
+			<field type="b2jheader" default="COM_B2JCONTACT_JMESSENGER_OPTIONS_LBL" color="basic"/>
+			<field name="jmessenger_user" type="user" label="COM_B2JCONTACT_JMESSENGER_LBL" description="COM_B2JCONTACT_JMESSENGER_DSC"/>
+			<field type="spacer" label="COM_B2JCONTACT_JMESSENGER_LINK"/>
+
+
+		</fieldset>
+
+		<fieldset name="fields" label="COM_B2JCONTACT_FIELDS_LBL">
+
+			<field type="b2jheader" default="COM_B2JCONTACT_PAGE_OPTIONS_LBL" color="fields"/>
+			<field name="page_subheading" type="b2jtext" filter="safehtml" size="26" label="COM_B2JCONTACT_SUBHEADING_LBL" description="COM_B2JCONTACT_SUBHEADING_DSC" wizard="COM_B2JCONTACT_SUBHEADING_DFLT"/>
+			<field type="selext" name="form__width" label="COM_B2JCONTACT_FORM_WIDTH_LBL" description="COM_B2JCONTACT_SIZE" size="4" default="|auto">
+				<option value="px">COM_B2JCONTACT_PIXELS</option>
+				<option value="%">COM_B2JCONTACT_PERCENT</option>
+				<option value="auto">COM_B2JCONTACT_AUTOMATIC</option>
+			</field>
+			<field name="customhtml0" type="b2jtextarea" filter="safehtml" rows="4" cols="48" label="COM_B2JCONTACT_TEXT_TOP_LBL" description="COM_B2JCONTACT_TEXT_TOP_DSC" wizard="COM_B2JCONTACT_TOPTEXT_DFLT"/>
+			<field name="customhtml0display" type="hidden" default="1"/>
+			<field name="customhtml0order" type="hidden" default="-1000"/>
+			<field name="customhtml1" type="b2jtextarea" filter="safehtml" rows="4" cols="48" label="COM_B2JCONTACT_TEXT_BOTTOM_LBL" description="COM_B2JCONTACT_TEXT_BOTTOM_DSC" wizard="COM_B2JCONTACT_BOTTOMTEXT_DFLT"/>
+			<field name="customhtml1display" type="hidden" default="1"/>
+			<field name="customhtml1order" type="hidden" default="1000"/>
+
+			<field type="b2jheader" default="COM_B2JCONTACT_LABELS_LBL" color="fields"/>
+			<field name="labelsdisplay" type="list" label="COM_B2JCONTACT_LABELS_LAYOUT_LBL" default="1">
+				<option value="1">COM_B2JCONTACT_LABELS_OUTSIDE</option>
+				<option value="0">COM_B2JCONTACT_LABELS_INSIDE</option>
+			</field>
+			<field name="form_layout" type="list" label="COM_B2JCONTACT_FORM_LAYOUT_LBL" description="COM_B2JCONTACT_FORM_LAYOUT_DSC" default="extended">
+				<option value="compact">COM_B2JCONTACT_COMPACT</option>
+				<option value="extended">COM_B2JCONTACT_EXTENDED</option>
+				<option value="stacked">COM_B2JCONTACT_STACKED</option>
+			</field>
+			<field type="b2jtext" name="labels__width" wizard="150" label="COM_B2JCONTACT_LABELS_WIDTH_LBL" description="COM_B2JCONTACT_LABELS_WIDTH_DSC" size="4" default="px">
+			</field>
+			<field type="b2jheader" default="COM_B2JCONTACT_SPECIAL_FIELDS_LBL" color="fields"/>
+
+			<field name="sender0" type="b2jtext" size="26" label="COM_B2JCONTACT_NAME_REQUEST_LBL" description="" wizard="COM_B2JCONTACT_YOUR_NAME_DFLT"/>
+			<field name="sender0display" type="list" label="COM_B2JCONTACT_FIELD_STATE" description="JFIELD_ENABLED_DESC" default="2">
+				<option value="0">JDISABLED</option>
+				<option value="1">JOPTION_OPTIONAL</option>
+				<option value="2">JOPTION_REQUIRED</option>
+			</field>
+			<field name="sender0order" type="text" label="JFIELD_ORDERING_LABEL" description="" size="5" default="1"/>
+			<field type="spacer"/>
+
+			<field name="sender1" type="b2jtext" size="26" label="COM_B2JCONTACT_ADDRESS_REQUEST_LBL" description="" wizard="COM_B2JCONTACT_YOUR_EMAIL_DFLT"/>
+			<field name="sender1display" type="list" label="COM_B2JCONTACT_FIELD_STATE" description="JFIELD_ENABLED_DESC" default="2">
+				<option value="0">JDISABLED</option>
+				<option value="1">JOPTION_OPTIONAL</option>
+				<option value="2">JOPTION_REQUIRED</option>
+			</field>
+			<field name="sender1order" type="text" label="JFIELD_ORDERING_LABEL" description="" size="5" default="2"/>
+			<field name="sender1isemail" type="hidden" default="1"/>
+			<!-- stexic hanel em xml@-->
+			<field type="b2jheader" default="COM_B2JCONTACT_TEXTFIELDS_LBL" color="fields"/>
+			<field type="b2jtext" name="text__width" label="COM_B2JCONTACT_WIDTH_LBL" description="COM_B2JCONTACT_SIZE" size="4" wizard="270">
+			</field>
+			<field type="b2jheader" default="COM_B2JCONTACT_DROPDOWNFIELDS_LBL" color="fields"/>
+			<field type="b2jtext" name="dropdown__width" label="COM_B2JCONTACT_WIDTH_LBL" description="COM_B2JCONTACT_SIZE" size="4" wizard="270">
+			</field>
+			<field type="b2jheader" default="COM_B2JCONTACT_TEXTAREAFIELD_LBL" description="COM_B2JCONTACT_TEXTAREAFIELD_DSC" color="fields"/>
+			<field type="b2jtext" name="textarea__width" label="COM_B2JCONTACT_WIDTH_LBL" description="" size="4" wizard="270">
+			</field>
+			<field type="selext" name="textarea__height" label="COM_B2JCONTACT_HEIGHT_LBL" description="" size="4" default="180|px">
+				<option value="px">COM_B2JCONTACT_PIXELS</option>
+				<option value="auto">COM_B2JCONTACT_AUTOMATIC</option>
+			</field>
+			<!-- toxel em mnacac@ -->
+			
+			<field type="b2jheader" default="COM_B2JCONTACT_UPLOAD_LBL" description="" color="fields"/>
+			<field name="uploaddisplay" type="list" label="COM_B2JCONTACT_UPLOAD_ENABLED_LBL" description="COM_B2JCONTACT_UPLOAD_ENABLED_DSC" default="0">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="uploadmethod" type="list" label="COM_B2JCONTACT_UPLOAD_METHOD_LBL" description="COM_B2JCONTACT_UPLOAD_METHOD_DSC" default="1">
+				<option value="1">COM_B2JCONTACT_UPLOAD_METHOD_LINK</option>
+				<option value="2">COM_B2JCONTACT_UPLOAD_METHOD_ATTACH</option>
+				<option value="3">COM_B2JCONTACT_UPLOAD_METHOD_BOTH</option>
+			</field>
+
+			<field name="upload" type="b2jtext" filter="safehtml" label="COM_B2JCONTACT_UPLOAD_FIELD_LBL" description="" wizard="COM_B2JCONTACT_UPLOAD_FIELD_DFLT"/>
+			<field name="uploadmax_file_size" type="text" label="COM_B2JCONTACT_UPLOAD_MAXSIZE_LBL" description="COM_B2JCONTACT_UPLOAD_MAXSIZE_DSC" default="102400" size="5"/>
+
+			<field type="b2jconditionalwarninglabel" description="" default="COM_B2JCONTACT_FUNCTION_DISABLED" color="fields" triggerkey="mimefilter" triggervalue="disabled"/>
+
+			<field name="upload_filter" type="b2jconditionallist" label="COM_B2JCONTACT_UPLOAD_FILTER_LBL" description="COM_B2JCONTACT_UPLOAD_FILTER_DSC" default="1" color="fields" triggerkey="mimefilter" triggervalue="disabled" triggerdata="0">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field type="spacer" class="text" label="COM_B2JCONTACT_UPLOAD_RULES_LBL" description=""/>
+			<field name="upload_audio" type="b2jconditionallist" label="COM_B2JCONTACT_UPLOAD_AUDIO_LBL" description="COM_B2JCONTACT_UPLOAD_AUDIO_DSC" default="0" color="fields" triggerkey="mimefilter" triggervalue="disabled" triggerdata="1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="upload_video" type="b2jconditionallist" label="COM_B2JCONTACT_UPLOAD_VIDEO_LBL" description="COM_B2JCONTACT_UPLOAD_VIDEO_DSC" default="0" triggerkey="mimefilter" triggervalue="disabled" triggerdata="1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="upload_images" type="b2jconditionallist" label="COM_B2JCONTACT_UPLOAD_IMAGES_LBL" description="COM_B2JCONTACT_UPLOAD_IMAGES_DSC" default="1" triggerkey="mimefilter" triggervalue="disabled" triggerdata="1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="upload_documents" type="b2jconditionallist" label="COM_B2JCONTACT_UPLOAD_DOCUMENTS_LBL" description="COM_B2JCONTACT_UPLOAD_DOCUMENTS_DSC" default="1" triggerkey="mimefilter" triggervalue="disabled" triggerdata="1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="upload_archives" type="b2jconditionallist" label="COM_B2JCONTACT_UPLOAD_ARCHIVES_LBL" description="COM_B2JCONTACT_UPLOAD_ARCHIVES_DSC" default="1" triggerkey="mimefilter" triggervalue="disabled" triggerdata="1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field type="b2jheader" default="COM_B2JCONTACT_SUBMIT_BUTTON_LBL" color="fields" />
+			<field name="submittext" type="b2jtext" size="26" label="COM_B2JCONTACT_SUBMIT_TEXT_LBL" description="COM_B2JCONTACT_SUBMIT_TEXT_DSC" wizard="JSUBMIT"/>
+			<field name="submittype" type="list" label="COM_B2JCONTACT_SUBMIT_TYPE_LBL" description="COM_B2JCONTACT_SUBMIT_TYPE_DSC" default="0">
+				<option value="0">COM_B2JCONTACT_BUTTON</option>
+				<option value="1">COM_B2JCONTACT_INPUT</option>
+			</field>
+			<!-- <field name="submiticon" type="filelist" label="COM_B2JCONTACT_SUBMIT_ICON_LBL" description="COM_B2JCONTACT_SUBMIT_ICON_DSC" default="" directory="media/com_b2jcontact/images/submit" filter="\.png$" exclude="" stripext="" hide_default="true"/>-->
+
+			<field type="b2jheader" default="COM_B2JCONTACT_RESET_BUTTON_LBL" color="fields"/>
+			<field name="resetbutton" type="radio" default="0" label="COM_B2JCONTACT_ENABLED">
+				<option value="0">JNo</option>
+				<option value="1">JYes</option>
+			</field>
+			<field name="resettext" type="b2jtext" size="26" label="COM_B2JCONTACT_SUBMIT_TEXT_LBL" description="COM_B2JCONTACT_SUBMIT_TEXT_DSC" wizard="COM_B2JCONTACT_RESET"/>
+			<field name="resettype" type="list" label="COM_B2JCONTACT_SUBMIT_TYPE_LBL" description="COM_B2JCONTACT_SUBMIT_TYPE_DSC" default="0">
+				<option value="0">COM_B2JCONTACT_BUTTON</option>
+				<option value="1">COM_B2JCONTACT_INPUT</option>
+			</field>
+			<!-- <field name="reseticon" type="filelist" label="COM_B2JCONTACT_SUBMIT_ICON_LBL" description="COM_B2JCONTACT_SUBMIT_ICON_DSC" default="" directory="media/com_b2jcontact/images/reset" filter="\.png$" exclude="" stripext="" hide_default="true"/>-->
+
+		</fieldset>
+
+		<fieldset name="events" label="COM_B2JCONTACT_EVENTS_LBL">
+
+			<field type="b2jheader" default="COM_B2JCONTACT_EVENTS_TEXT_LBL" color="events" />
+		
+			<field name="email_sent_action" type="list" label="COM_B2JCONTACT_THANKYOU_ACTION_LBL" description="COM_B2JCONTACT_THANKYOU_ACTION_DSC" default="0">
+				<option value="0">COM_B2JCONTACT_THANKYOU_ACTION_SHOWMSG</option>
+				<option value="1">COM_B2JCONTACT_THANKYOU_ACTION_REDIRECT</option>
+				<option value="2">COM_B2JCONTACT_THANKYOU_ACTION_REFRESH</option>
+			</field>
+			<field name="email_sent_text" type="b2jtextarea" filter="safehtml" rows="4" cols="48" label="COM_B2JCONTACT_THANKYOU_TEXT_LBL" description="COM_B2JCONTACT_THANKYOU_TEXT_DSC" wizard="COM_B2JCONTACT_SENTTEXT_DFLT"/>
+			<field name="email_sent_textdisplay" type="hidden" default="1"/>
+			<field name="email_sent_page" type="menuitem" label="COM_B2JCONTACT_THANKYOU_PAGE_LBL" description="COM_B2JCONTACT_THANKYOU_PAGE_DSC"/>
+
+			<field type="b2jheader" default="COM_B2JCONTACT_EMAIL_COPY_TTL" color="events" />
+			<field name="copy_to_submitter" type="list" label="COM_B2JCONTACT_EMAIL_COPY_LBL" description="COM_B2JCONTACT_EMAIL_COPY_DSC" default="1">
+				<option value="0">COM_B2JCONTACT_NEVER</option>
+				<option value="1">COM_B2JCONTACT_ALWAYS</option>
+				<option value="2">COM_B2JCONTACT_ON_REQUEST</option>
+			</field>
+			<field name="email_copy_subject" type="b2jtext" size="26" label="COM_B2JCONTACT_EMAIL_SUBJECT_LBL" wizard="COM_B2JCONTACT_EMAIL_COPY_SUBJECT_DFLT"/>
+			<field name="email_copy_text" type="b2jtextarea" rows="4" cols="48" label="COM_B2JCONTACT_EMAIL_COPY_BODY_LBL" wizard="COM_B2JCONTACT_EMAIL_COPY_BODY_DFLT"/>
+			<field name="email_copy_summary" type="list" label="COM_B2JCONTACT_EMAIL_COPY_SUMMARY_LBL" description="COM_B2JCONTACT_EMAIL_COPY_SUMMARY_DSC" default="0">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+		</fieldset>
+
+		<fieldset name="b2jupdate">
+			<field type="b2jupdate" addfieldpath="/administrator/components/com_b2jcontact/models/fields"></field>
+		</fieldset>	
+		
+		<fieldset name="security" label="COM_B2JCONTACT_SECURITY_LBL">
+
+			<field type="b2jheader" default="COM_B2JCONTACT_ANTISPAM_LBL" description="COM_B2JCONTACT_ANTISPAM_DSC" color="security"/>
+			<field name="spam_check" type="list" label="COM_B2JCONTACT_ANTISPAM_ENABLED_LBL" description="" default="1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="spam_words" type="b2jtextarea" cols="30" rows="3" label="COM_B2JCONTACT_ANTISPAM_WORDS_LBL" description="COM_B2JCONTACT_ANTISPAM_WORDS_DSC" wizard="COM_B2JCONTACT_SPAMWORDS_DFLT"/>
+
+			<field name="spam_detected_text" type="b2jtextarea" rows="4" cols="48" filter="safehtml" label="COM_B2JCONTACT_ANTISPAM_MESSAGE_LBL" description="COM_B2JCONTACT_ANTISPAM_MESSAGE_DSC" wizard="COM_B2JCONTACT_SPAMTEXT_DFLT"/>
+			<field name="spam_detected_textdisplay" type="hidden" default="1"/>
+
+			<field type="b2jheader" default="COM_B2JCONTACT_STDCAPTCHA_LBL" color="security"/>
+			<field type="b2jconditionalwarninglabel" description="" default="COM_B2JCONTACT_FUNCTION_DISABLED" color="security" triggerkey="captchadrawer" triggervalue="disabled" />
+
+			<field name="stdcaptchadisplay" type="b2jconditionallist" label="COM_B2JCONTACT_STDCAPTCHA_ENABLED_LBL" description="" default="0" triggerkey="captchadrawer" triggervalue="disabled" triggerdata="0">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="stdcaptcha" type="b2jtext" label="COM_B2JCONTACT_STDCAPTCHA_FIELD_LBL" description="" wizard="COM_B2JCONTACT_STDCAPTCHA_FIELD_DFLT"/>
+
+			<field name="stdcaptchatype" type="list" label="COM_B2JCONTACT_STDCAPTCHATYPE_LBL" description="" default="0">
+				<option value="0">COM_B2JCONTACT_STDCAPTCHATYPE_STD</option>
+				<option value="1">COM_B2JCONTACT_STDCAPTCHATYPE_MATH</option>
+			</field>
+
+			<field name="stdcaptcha_length" type="text" label="COM_B2JCONTACT_STDCAPTCHA_CHARS_LBL" description="COM_B2JCONTACT_STDCAPTCHA_CHARS_DSC" default="5" size="5"/>
+
+			<field name="stdcaptchawidth" type="text" label="COM_B2JCONTACT_STDCAPTCHA_WIDTH_LBL" description="COM_B2JCONTACT_STDCAPTCHA_WIDTH_DSC" default="150" size="5"/>
+			<field name="stdcaptchaheight" type="text" label="COM_B2JCONTACT_STDCAPTCHA_HEIGHT_LBL" description="COM_B2JCONTACT_STDCAPTCHA_HEIGHT_DSC" default="75" size="5"/>
+
+			<field name="stdcaptchafont" type="filelist" label="COM_B2JCONTACT_STDCAPTCHA_FONT_LBL" description="COM_B2JCONTACT_STDCAPTCHA_FONT_DSC" default="" directory="media/com_b2jcontact/fonts" filter="\.ttf$" exclude="" stripext="" hide_default="true"/>
+			<field name="stdcaptchafontmin" type="text" label="COM_B2JCONTACT_STDCAPTCHA_MINSIZE_LBL" description="COM_B2JCONTACT_STDCAPTCHA_MINSIZE_DSC" default="14" size="5"/>
+			<field name="stdcaptchafontmax" type="text" label="COM_B2JCONTACT_STDCAPTCHA_MAXSIZE_LBL" description="COM_B2JCONTACT_STDCAPTCHA_MAXSIZE_DSC" default="20" size="5"/>
+
+			<field name="stdcaptchaangle" type="text" label="COM_B2JCONTACT_STDCAPTCHA_ANGLE_LBL" description="COM_B2JCONTACT_STDCAPTCHA_ANGLE_DSC" default="20" size="5"/>
+
+			<field name="stdcaptcha_backgroundcolor" type="text" label="COM_B2JCONTACT_STDCAPTCHA_BACKGROUND_COLOR_LBL" default="#ffffff" size="5"/>
+			<field name="stdcaptcha_textcolor" type="text" label="COM_B2JCONTACT_STDCAPTCHA_TEXT_COLOR_LBL" default="#191919" size="5"/>
+			<field name="stdcaptcha_disturbcolor" type="text" label="COM_B2JCONTACT_STDCAPTCHA_DISTURB_COLOR_LBL" description="COM_B2JCONTACT_STDCAPTCHA_DISTURB_COLOR_DSC" default="#c8c8c8" size="5"/>
+
+		</fieldset>
+
+		<fieldset name="formfields" label="formfields">
+			<field name="itemgroups" type="b2jdynamicgroup" default='{"0":[{"title":"create new group","class":"","ordering":"0","state":"1"}]}' />
+			<field name="dynamicfields" type="b2jdynamicfields" default=''/>
+		</fieldset>
+
+	</fields>
+	<!-- end -->
+		<field name="hits"
+			type="text"
+			class="readonly"
+			size="6" label="JGLOBAL_HITS"
+			description="COM_B2JCONTACT_HITS_DESC"
+			readonly="true"
+			filter="unset" />
+		<field name="version" type="text" class="readonly"
+			label="COM_B2JCONTACT_FIELD_VERSION_LABEL" size="6" description="COM_B2JCONTACT_FIELD_VERSION_DESC"
+			readonly="true" filter="unset" />
+
+</form>
