@@ -29,7 +29,7 @@ header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
 #banner-home .content-banner{padding-top:100px;text-align:center;}
 #banner-home .content-banner h1{color:#fff;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
 #banner-home .content-banner h3{color:#fff;font-size:1.5em;font-weight:400;margin-top:0;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
-#banner-home .content-banner a{margin:60px auto}
+#banner-home .content-banner a{margin:60px auto;display:block;width:20%}
 #banner-servicios{background-color:#bed748;height:100px;text-align:center;}
 #banner-servicios h1{margin:0;color:#fff;padding-top:10px;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
 #content{min-height:500px;margin-top:20px;margin-bottom:30px;}
