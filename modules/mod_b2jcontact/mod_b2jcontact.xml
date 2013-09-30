@@ -7,7 +7,7 @@
 	<authorUrl>http://www.bang2joom.com</authorUrl>
 	<copyright>Copyright 2012 Bang2Joom. All rights reserved.</copyright>
 	<license>GNU/GPL v3</license>
-	<version>1.4</version>
+	<version>1.5</version>
 	<description>MOD_B2JCONTACT_DESCRIPTION</description>
 
 	<files>
@@ -34,7 +34,13 @@
 		<language tag="ru-RU">ru-RU/ru-RU.mod_b2jcontact.ini</language>
 		<language tag="ru-RU">ru-RU/ru-RU.mod_b2jcontact.sys.ini</language>
 		<language tag="sk-SK">sk-SK/sk-SK.mod_b2jcontact.ini</language>
-		<language tag="ru-RU">sk-SK/sk-SK.mod_b2jcontact.sys.ini</language>
+		<language tag="sk-SK">sk-SK/sk-SK.mod_b2jcontact.sys.ini</language>
+		<language tag="hy-AM">hy-AM/hy-AM.mod_b2jcontact.ini</language>
+		<language tag="hy-AM">hy-AM/hy-AM.mod_b2jcontact.sys.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.mod_b2jcontact.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.mod_b2jcontact.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_b2jcontact.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_b2jcontact.sys.ini</language>
 	</languages>
 
 	<config>

@@ -238,7 +238,7 @@
 			<field name="email_sent_page" type="menuitem" label="COM_B2JCONTACT_THANKYOU_PAGE_LBL" description="COM_B2JCONTACT_THANKYOU_PAGE_DSC"/>
 
 			<field type="b2jheader" default="COM_B2JCONTACT_EMAIL_COPY_TTL" color="events" />
-			<field name="copy_to_submitter" type="list" label="COM_B2JCONTACT_EMAIL_COPY_LBL" description="COM_B2JCONTACT_EMAIL_COPY_DSC" default="1">
+			<field name="copy_to_submitter" type="list" label="COM_B2JCONTACT_EMAIL_COPY_LBL" description="COM_B2JCONTACT_EMAIL_COPY_DSC" default="0">
 				<option value="0">COM_B2JCONTACT_NEVER</option>
 				<option value="1">COM_B2JCONTACT_ALWAYS</option>
 				<option value="2">COM_B2JCONTACT_ON_REQUEST</option>

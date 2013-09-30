@@ -7,7 +7,7 @@
 	<authorUrl>http://www.bang2joom.com</authorUrl>
 	<copyright>Copyright 2013 Bang2Joom. All rights reserved.</copyright>
 	<license>GNU/GPL v3</license>
-	<version>1.4</version>
+	<version>1.5</version>
 	<desc>COM_B2JCONTACT_DESC</desc>
 
 	<files folder="site">
@@ -45,6 +45,9 @@
         <language tag="pt-PT">pt-PT/pt-PT.com_b2jcontact.ini</language>
         <language tag="ru-RU">ru-RU/ru-RU.com_b2jcontact.ini</language>
         <language tag="sk-SK">sk-SK/sk-SK.com_b2jcontact.ini</language>
+        <language tag="hy-AM">hy-AM/hy-AM.com_b2jcontact.ini</language>
+        <language tag="pl-PL">pl-PL/pl-PL.com_b2jcontact.ini</language>
+        <language tag="pt-BR">pt-BR/pt-BR.com_b2jcontact.ini</language>
 	</languages>
 
 	<administration>
@@ -84,6 +87,13 @@
 			<language tag="ru-RU">ru-RU/ru-RU.com_b2jcontact.sys.ini</language>
 			<language tag="sk-SK">sk-SK/sk-SK.com_b2jcontact.ini</language>
 			<language tag="sk-SK">sk-SK/sk-SK.com_b2jcontact.sys.ini</language>
+			<language tag="hy-AM">hy-AM/hy-AM.com_b2jcontact.ini</language>
+			<language tag="hy-AM">hy-AM/hy-AM.com_b2jcontact.sys.ini</language>
+			<language tag="pl-PL">pl-PL/pl-PL.com_b2jcontact.ini</language>
+			<language tag="pl-PL">pl-PL/pl-PL.com_b2jcontact.sys.ini</language>
+			<language tag="pt-BR">pt-BR/pt-BR.com_b2jcontact.ini</language>
+			<language tag="pt-BR">pt-BR/pt-BR.com_b2jcontact.sys.ini</language>
+
 		</languages>
 
 	</administration>

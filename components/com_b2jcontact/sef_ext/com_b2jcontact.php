@@ -19,13 +19,22 @@ $shItemidString = '';
 $dosef = shInitializePlugin( $lang, $shLangName, $shLangIso, $option);
 if ($dosef == false) return;
 
-shRemoveFromGETVarsList('Itemid');
+if(isset($Itemid)){
+	shRemoveFromGETVarsList('Itemid');
+}else{
+	$Itemid = null;
+}
 shRemoveFromGETVarsList('lang');
 shRemoveFromGETVarsList('option');
+shRemoveFromGETVarsList('bid');
 
 if (strpos($string, "view=loader") === false)
 {
 	shRemoveFromGETVarsList("view");
+}
+
+if(!isset($task)){
+	$task = '';
 }
 
 $title[] = getMenuTitle($option, $task, $Itemid, null, $shLangName);

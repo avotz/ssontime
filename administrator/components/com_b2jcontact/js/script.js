@@ -463,7 +463,7 @@ function showEditField(elem,id){
 				value[parseInt(key)]["b2jFieldItems"] = escapeHtml(jQuery("#b2j_"+key+" textarea[fieldType='b2jFieldItems']").val());	
 			}
 			if(type == "b2jDynamicTextarea"){
-				value[parseInt(key)]["b2jDefaultValue"] = escapeHtml(jQuery("#b2j_"+key+" textarea[fieldType='b2jDefaultValue']").val());
+				value[parseInt(key)]["b2jDefaultValue"] = escapeHtml(jQuery("#b2j_"+key+" input[fieldType='b2jDefaultValue']").val());
 			}
 			if(type == "b2jDynamicCheckbox"){
 				value[parseInt(key)]["b2jDefaultValue"] = escapeHtml(jQuery("#b2j_"+key+" select[fieldType='b2jDefaultValue']").val());	

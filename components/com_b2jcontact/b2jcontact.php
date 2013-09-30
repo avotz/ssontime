@@ -29,7 +29,7 @@ $application->owner = "component";
 $application->oid = isset($activemenu->id) ? $activemenu->id : 0;
 $application->b2jcomid = isset($activemenu->id) ? $activemenu->id : 0;
 $application->b2jmoduleid = 0;
-$application->bid = $application->input->getInt('bid');
+$application->bid = isset($activemenu->query['bid']) ? $activemenu->query['bid']: 0;
 
 
 $application->submitted = (bool)count($_POST) && isset($_POST["b2jcomid_$application->b2jcomid"]);

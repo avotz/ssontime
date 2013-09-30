@@ -25,7 +25,7 @@ class B2jContactModelContact
 	public function getItem($pk = null,$cparams)
 	{
 		$app = JFactory::getApplication('site');
-		$pk = (!empty($pk)) ? $pk : (int) $app->input->getInt('bid');
+		$pk = (!empty($pk)) ? $pk : (int) $app->bid;
 
 		if ($this->_item === null)
 		{
