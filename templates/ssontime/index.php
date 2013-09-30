@@ -53,7 +53,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
 	
 	<header>
             <div class="inner">
-                <div id="logo"><a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/logo.jpg" alt="Servicios sin limites" /></a></div>
+                <div id="logo"><a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/logo.png" alt="Servicios sin limites" /></a></div>
                 <div id="idiomas">
                     <jdoc:include type="modules" name="idiomas" style="none" />
                 </div>

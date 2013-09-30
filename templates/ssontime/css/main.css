@@ -15,7 +15,7 @@ html,body{background:url("../img/bg_motivo.jpg");font-family:'Droid Sans',sans-s
 p{line-height:1.5em}
 header{background:#fff;height:75px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);position:relative;}
 header ul{margin:0;padding:0}
-header #logo{display:inline-block;width:100px}
+header #logo{display:inline-block;width:100px;margin-top:5px}
 header #idiomas{display:inline-block;vertical-align:top;width:100px;border-left:1px solid #1f1f1f;margin:8px 0 0 0;padding:.5em;}
 header #idiomas ul{list-style:none;}
 header #idiomas ul li{padding:.2em;}
