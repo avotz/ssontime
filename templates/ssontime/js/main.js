@@ -1,5 +1,6 @@
 $(function() {
 
+
 	$('#tours').on('click',function(){
 
 		$('.descripcion-tours').toggle('fast');
@@ -22,5 +23,17 @@ $(function() {
 
 	});
 
+	$('#banner-home').before('<div id="slideshow-nav">').cycle({ 
+        fx:     'fade',
+        speed:  'fast',
+        timeout: 3000,
+        slideResize: 0
+        //pager:  '#slideshow-nav'
+
+     });
+
+	
 
 });
+
+
