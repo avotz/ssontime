@@ -25,6 +25,7 @@
 	</files>
 	<positions>
 		<position>menu_footer</position>
+		<position>promociones</position>
 		<position>debug</position>
 		<position>idiomas</position>
 		<position>banner</position>

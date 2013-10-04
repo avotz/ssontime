@@ -67,6 +67,11 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
             <jdoc:include type="modules" name="banner" style="none" />
             
         </section>
+         <?php if ($this->countModules('promociones')) : ?>
+             <div id="promociones">
+                <jdoc:include type="modules" name="promociones" style="none" />
+            </div>
+            <?php endif; ?>
         <section id="content">
             <div class="inner">
                  <jdoc:include type="component" />
