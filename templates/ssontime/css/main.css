@@ -33,7 +33,8 @@ header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
 #banner-home .content-banner a{margin:60px auto;display:block;width:20%}
 #banner-servicios{background-color:#bed748;height:100px;text-align:center;}
 #banner-servicios h1{margin:0;color:#fff;padding-top:10px;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
-#promociones{min-height:150px;text-align:center}
+#promociones{background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fcbf1d),color-stop(1,#f35300));background-image:-webkit-linear-gradient(top,#fcbf1d 0%,#f35300 100%);background-image:-moz-linear-gradient(top,#fcbf1d 0%,#f35300 100%);background-image:linear-gradient(top,bottom,#fcbf1d 0%,#f35300 100%);min-height:150px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);text-align:center;}
+#promociones p{margin-top:0;padding-top:30px;font-size:1.5em;color:#fff}
 #content{min-height:500px;margin-top:20px;margin-bottom:30px;}
 #content ul li{line-height:1.5em}
 #content h1{color:#3b5998}
