@@ -33,7 +33,7 @@ header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
 #banner-home .content-banner a{margin:60px auto;display:block;width:20%}
 #banner-servicios{background-color:#bed748;height:100px;text-align:center;}
 #banner-servicios h1{margin:0;color:#fff;padding-top:10px;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
-#promociones{height:150px;text-align:center}
+#promociones{min-height:150px;text-align:center}
 #content{min-height:500px;margin-top:20px;margin-bottom:30px;}
 #content ul li{line-height:1.5em}
 #content h1{color:#3b5998}
@@ -43,7 +43,7 @@ header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
 #content .descripcion-tours,#content .descripcion-rates,#content .descripcion-locations{display:none}
 #content .item-page{padding:30px;background:#fff;border:1px solid #c2c2c2}
 #content .content-home{text-align:center;}
-#content .content-home h3{font-size:2em;font-weight:400;margin-top:90px;margin-bottom:0}
+#content .content-home h3{font-size:2em;font-weight:400;margin-bottom:0}
 #content .content-home h3 + p{font-size:1.3em;margin-top:0}
 #content .content-home .services-home{margin-top:90px;}
 #content .content-home .services-home a{display:inline-block;margin:5px;vertical-align:top;height:177px;width:177px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 5px rgba(0,0,0,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 3px rgba(0,0,0,0.5);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(1,#f9f9f8));background-image:-webkit-linear-gradient(top,#fff 0%,#f9f9f8 100%);background-image:-moz-linear-gradient(top,#fff 0%,#f9f9f8 100%);background-image:linear-gradient(top,bottom,#fff 0%,#f9f9f8 100%);border:1px solid #9fafcd;border-radius:10px;text-decoration:none;padding-top:30px;}
