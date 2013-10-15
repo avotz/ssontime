@@ -26,7 +26,7 @@ header #menu ul li{margin-right:1em;border-radius:15px;display:inline-block;vert
 header #menu ul li a{color:#1f1f1f;font-size:16px;text-transform:uppercase;text-decoration:none;display:block;padding:.5em}
 header #menu ul .current,header #menu ul li:hover{background:#ebe9e9}
 #banner-home{height:549px;width:100%;}
-#banner-home .slide{background-attachment:fixed;background-position:center top;background-repeat:no-repeat;background-size:cover;height:100%;text-align:center;width:100%;}
+#banner-home .slide{background-position:center top;background-repeat:no-repeat;background-size:cover;height:100%;text-align:center;width:100%;}
 #banner-home .content-banner{padding-top:100px;text-align:center;}
 #banner-home .content-banner h1{color:#fff;font-size:4em;font-weight:700;margin-top:0;text-transform:uppercase;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
 #banner-home .content-banner h3{color:#fff;font-size:1.5em;font-weight:400;margin-top:0;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
