@@ -31,7 +31,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" >
 <head>
-	<meta name="viewport" content="width=device-width" />
+	
 	<jdoc:include type="head" />
     <link rel="icon" type="image/png" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/favicon_32x32.ico">
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
