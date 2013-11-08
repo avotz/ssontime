@@ -21,12 +21,10 @@ class B2JFieldsBuilder extends B2JDataPump
 	public function __construct(&$params, B2JMessageBoard &$messageboard)
 	{
 		parent::__construct($params, $messageboard);
-
-		$this->ValidateEmail();		
+		
+		$this->senderEmail = $this->getSenderEmail();
 		if (!isset($GLOBALS[$GLOBALS["ext_name"] . '_js_loaded']))
 		{
-
-
 			$min = JFactory::getConfig()->get("debug") ? "" : ".min";
 
 	
@@ -37,8 +35,7 @@ class B2JFieldsBuilder extends B2JDataPump
 
 			$document->addScript(JRoute::_("index.php?option=" . $GLOBALS["com_name"] . "&amp;view=loader&amp;owner=" . $this->Application->owner . "&amp;id=" . $this->Application->oid . "&amp;type=js&amp;filename=jtext"));
 	
-			$document->addScript(JUri::base(true) . "/components/" . $GLOBALS["com_name"] . "/js/fileuploader" . $min . ".js");
-
+			$document->addScript(JUri::base(true) . "/components/" . $GLOBALS["com_name"] . "/js/fileuploader.js");
 			
 			$uncompressed = JFactory::getConfig()->get("debug") ? "-uncompressed" : "";
 			$document->addScript(JUri::base(true) . "/media/system/js/core" . $uncompressed . ".js");
@@ -192,7 +189,10 @@ class B2JFieldsBuilder extends B2JDataPump
                             break;
                         case 'b2jDynamicLabel':
 							$result .= $this->BuildDynamicLabelField($dynamicfield); 
-                            break;    
+                            break;
+                        case 'b2jDynamicEmail':
+							$result .= $this->BuildDynamicEmailField($dynamicfield); 
+                            break;        
 						default:
 							$html .= "field type error"; 	
 							break;		
@@ -283,8 +283,11 @@ class B2JFieldsBuilder extends B2JDataPump
 			$post_value = "";
 		}
 		
-		$field->IsValid = intval($this->ValidateField($post_value, $field->b2jFieldState));
-
+		if($field->type == "b2jDynamicEmail"){
+			$field->IsValid = intval($this->ValidateEmail($post_value, $field));
+		}else{
+			$field->IsValid = intval($this->ValidateField($post_value, $field->b2jFieldState));
+		}
 		return true;
 	}
 
@@ -632,6 +635,27 @@ class B2JFieldsBuilder extends B2JDataPump
 
 	}
 
+	private function BuildDynamicEmailField(&$field)
+	{
+		$this->CreateDynamicStandardLabel($field);
+
+		$result = '<div class="control-group' . $this->DynamicTextStyleByValidation($field) . '">' .
+			$this->LabelHtmlCode .
+			'<div class="controls">' .
+			'<input ' .
+			'type="text" ' .
+			'value="' . $field->b2jFieldValue . '" ' .
+			'title="' . $field->b2jFieldName . '" ' .
+			'name="dynamic_' . $field->b2jFieldKey . '" ' .
+			$this->JSCode .
+			'/>' .
+			$this->DynamicDescriptionByValidation($field) . 
+			'</div>' . 
+			'</div>'; 
+
+		return $result;
+	}
+
 	function DescriptionByValidation(&$field)
 	{
 		return $field['IsValid'] ? "" : (" <span class=\"asterisk\"></span>");
@@ -706,52 +730,67 @@ class B2JFieldsBuilder extends B2JDataPump
 		return !($this->Submitted && ($fieldtype == 2) && empty($fieldvalue));
 	}
 
-
-	function ValidateEmail()
+	function ValidateEmail($post_value, $field)
 	{
-		
-		if (!isset($_POST[$this->GetId()])) return true;
+		if(!$this->Submitted){
+			return true;
+		}else{
 
-		
-		if (!isset($this->Fields['sender1'])) return true;
+			if (empty($post_value) && $field->b2jFieldState != 2) return true;
 
-	
-		if (empty($this->Fields['sender1']['Value']) && $this->Fields['sender1']['Display'] == 1) return true;
+			if (!isset($post_value)) return false;
+		}
 
-		if (!isset($this->Fields['sender1']['Value'])) return false;
-
-		
-		$this->Fields['sender1']['IsValid'] &= (preg_match('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/', strtolower($this->Fields['sender1']['Value'])) == 1);
-
+		if(!(preg_match('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/', strtolower($post_value)) == 1)) return false;
 		
 		$db = JFactory::getDBO();
-		$sql = "SELECT value FROM #__" . $GLOBALS["ext_name"] . "_settings WHERE name = 'dns';";
+
+		//$sql = "SELECT value FROM #__" . $GLOBALS["ext_name"] . "_settings WHERE name = 'dns';";
+		$sql = "SELECT params FROM #__extensions WHERE name = 'com_b2jcontact' and type ='component';";
 		$db->setQuery($sql);
-		$method = $db->loadResult();
-		if ($method)
+		$methodRow = $db->loadResult();
+		$methodRow = json_decode($methodRow);
+		
+		$method = false;
+		if(isset($methodRow->use_dns)){
+			$method = $methodRow->use_dns;
+		}
+
+		if (isset($method) and $method == "dns_check")
 		{
-			$this->$method();
+			return $this->$method($post_value, $field);
+		}else{
+			return true;
 		}
 	}
 
-
-	function dns_check()
+	function dns_check($post_value, $field)
 	{
-		
-		if (empty($this->Fields['sender1']['Value'])) return;
+		if (empty($post_value)) return;
 
-		$parts = explode("@", $this->Fields['sender1']['Value']);
+		$parts = explode("@", $post_value);
 		$domain = array_pop($parts);
 		if (!empty($domain))
-			$this->Fields['sender1']['IsValid'] &= checkdnsrr($domain, "MX");
+			return (checkdnsrr($domain, "MX"));
 	}
 
-
-	function disabled()
-	{
-		return true;
+	function getSenderEmail(){
+		if (isset($this->DynamicFields) and count($this->DynamicFields) > 0){
+            foreach ($this->DynamicFields as $key => $field)
+            {
+                if (!$field[0]->state){
+                    continue;
+                }
+                foreach ($field[1] as $dynamicfield){
+                    if(!$dynamicfield->b2jFieldState || $dynamicfield->b2jFieldGroup == 0 || $dynamicfield->type != 'b2jDynamicEmail' || $dynamicfield->b2jFieldRadio != 1){
+                        continue;
+                    }
+                    return $dynamicfield;
+                }
+            }
+        }
+        return false;	
 	}
-
 }
 
 

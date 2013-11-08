@@ -1368,10 +1368,11 @@ function strpos(haystack, needle, offset)
 }
 
 
-function ResetB2jControls()
+function ResetB2jControls(element)
 {
 	ResetCheckboxes();
 	ResetDropdowns();
+	ResetAttachments(jQuery(element));
 }
 
 
@@ -1391,6 +1392,7 @@ function ResetCheckboxes()
 		}
 	}
 }
+/* Checkboxes end */
 
 
 function ResetDropdowns()
@@ -1421,7 +1423,47 @@ function ResetDropdowns()
 }
 /* Dropdown end */
 
-/* Checkboxes end */
+var resets = new Array();
+
+function ResetBind(key, bid, b2jcomid, b2jmoduleid, owner){
+	resets[key] = new Array();
+
+	resets[key]['key'] = key;
+	resets[key]['bid'] = bid;
+	resets[key]['b2jcomid'] = b2jcomid;
+	resets[key]['b2jmoduleid'] = b2jmoduleid;
+	resets[key]['owner'] = owner;
+}
+
+function ResetAttachments(element)
+{	
+	arrayKey = jQuery(element).attr('id');
+	arrayStr = arrayKey.replace("b2j_form_","");
+	arrayFirst = arrayStr.substr(0,1);
+	arrayId = arrayStr.substr(1);
+	
+	key = arrayFirst + "id_" + arrayId; 
+
+	jQuery.ajax({   
+		type:"POST",
+		url:"index.php",
+		data: ({
+			option: "com_b2jcontact",
+			no_html: 1,
+			task : "resetAttachments",
+			dataType: 'json',
+			bid: resets[key]['bid'],
+			b2jcomid: resets[key]['b2jcomid'],
+			b2jmoduleid: resets[key]['b2jmoduleid'],
+			}),
+		success: function(res){
+			jQuery("#uploadlist-"+resets[key]['owner']+arrayId).html('');
+			return false;	
+		}                                
+	 });	
+}
+
+/* Attachment end */
 
 /* Captcha begin */
 function ReloadB2JCaptcha(id)

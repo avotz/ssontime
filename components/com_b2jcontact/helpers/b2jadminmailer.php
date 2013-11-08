@@ -64,8 +64,17 @@
 			$from = $emailhelper->convert($adminemailfrom);
 			$mail->setSender($from);
 
-			$adminemailreplyto = $config->get("adminemailreplyto");
-			$replyto = $emailhelper->convert($adminemailreplyto);
+			//$adminemailreplyto = $config->get("adminemailreplyto");
+			$adminemailreplyto = array();
+			$adminemailreplyto['name'] = "";
+			if (!isset($this->FieldsBuilder->senderEmail->b2jFieldValue) || empty($this->FieldsBuilder->senderEmail->b2jFieldValue)){
+				$adminemailreplyto['email'] = "";
+			}else{
+				$adminemailreplyto['email'] = $this->FieldsBuilder->senderEmail->b2jFieldValue;	
+			}
+			$replyto = $adminemailreplyto;
+			//$replyto = $emailhelper->convert($adminemailreplyto);
+
 			$mail->ClearReplyTos();
 			$mail->addReplyTo($replyto);
 		}

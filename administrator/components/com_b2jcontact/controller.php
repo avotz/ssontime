@@ -43,8 +43,9 @@ class B2jContactController extends JControllerLegacy
 		require_once JPATH_COMPONENT.'/helpers/contact.php';
 
 		$type = JFactory::getApplication()->input->get("type",false);
+		$defaultEmail = JFactory::getApplication()->input->get("defaultEmail",false);
 
-        $response = ContactHelper::getFieldForm($type);
+        $response = ContactHelper::getFieldForm($type,$defaultEmail);
 
         echo json_encode($response);
   
@@ -59,12 +60,12 @@ class B2jContactController extends JControllerLegacy
 		$fieldState 	= JFactory::getApplication()->input->get("fieldState",false);
 		$fieldGroup		= JFactory::getApplication()->input->get("fieldGroup",false);
 		$fieldItems 	= JFactory::getApplication()->input->get("fieldItems",false,"string");
-		//$b2jGroups 	= JFactory::getApplication()->input->get("b2jGroups",false,"string");
+		$fieldRadio		= JFactory::getApplication()->input->get("fieldRadio",false);
 
 		$newGroupName 	= JFactory::getApplication()->input->get("newGroupName",false);
 		$key 	= JFactory::getApplication()->input->get("key",false);
 
-        $response = ContactHelper::saveNewField($type,$fieldName,$defaultValue,$fieldState,$fieldGroup,$fieldItems,$newGroupName,$key);//,$b2jGroups
+        $response = ContactHelper::saveNewField($type,$fieldName,$defaultValue,$fieldState,$fieldGroup,$fieldItems,$fieldRadio,$newGroupName,$key);//,$b2jGroups
         
         echo json_encode($response);
   

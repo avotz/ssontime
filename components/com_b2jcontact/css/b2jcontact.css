@@ -149,6 +149,10 @@ div#b2jcontainer<?php echo $uid ?> .b2j_form textarea
 	margin: 0;
 }
 
+div#b2jcontainer<?php echo $uid ?> .b2j_form a{
+	color: #898989;
+	text-decoration: underline;
+}
 div#b2jcontainer<?php echo $uid ?> .b2j_form input[type="text"]:hover,
 div#b2jcontainer<?php echo $uid ?> .b2j_form textarea:hover,
 div#b2jcontainer<?php echo $uid ?> .b2j_form input[type="text"]:focus,

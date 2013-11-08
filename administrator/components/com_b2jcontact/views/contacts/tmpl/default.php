@@ -25,7 +25,6 @@ $canOrder	= $user->authorise('core.edit.state', 'com_b2jcontact');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder)
 {
-	var_dump($listDirn);
 	$saveOrderingUrl = 'index.php?option=com_b2jcontact&task=contacts.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }

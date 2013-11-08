@@ -101,6 +101,10 @@ class JFormFieldB2JDynamicfields extends JFormField
 							$fieldHtml .= ContactHelper::rendTextareaField($item,$item->b2jFieldKey,$gradingGroups);
 							$type = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_TEXT_AREA');
 							break;
+						case 'b2jDynamicEmail':
+							$fieldHtml .= ContactHelper::rendEmailField($item,$item->b2jFieldKey,$gradingGroups);
+							$type = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_EMAIL');
+							break;	
 						case 'b2jDynamicCheckbox':
 							$fieldHtml .= ContactHelper::rendCheckboxField($item,$item->b2jFieldKey,$gradingGroups);
 							$type = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_CHECK_BOX');
@@ -118,17 +122,21 @@ class JFormFieldB2JDynamicfields extends JFormField
 							$type = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_ERROR');	
 							break;		
 					}
+					$icon = '';
+					if($item->type == 'b2jDynamicEmail' && $item->b2jFieldRadio == '1'){
+						$icon = "<span class='email_default'> (Default)</span>";
+					}
 					$html .= 	'<li id="item_'.$item->b2jFieldKey.'" class="row'.$item->b2jFieldKey.' fields" key="'.$item->b2jFieldKey.'" groupId="'.(string)$group->val.'">
 									<div>
 										<i class="icon-menu"></i>
 										<span class="b2j-dynamic-field-name">'.$item->b2jFieldName.'</span>
-										<span class="b2j-dynamic-field-type">'.$type.'</span>
+										<span class="b2j-dynamic-field-type">'.$type.$icon.'</span>
 										<span style="float:right;">
 											<input type="button" class="b2j-dynamic-field-action-links edit" isGroup="false" value="'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_EDIT_BTN').'" onClick="showEditField(this,'.$item->b2jFieldKey.')">
 											<input type="button" class="b2j-dynamic-field-action-links delete" isGroup="false" value="'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_DELETE_BTN').'" onClick="deleteField(this,'.$item->b2jFieldKey.');">
 										</span>
 									</div>
-									</li>';
+								</li>';
 				}
 				$html .= '</ol>';
 			}

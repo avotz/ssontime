@@ -53,7 +53,7 @@ class ContactHelper
 		
 		return $result;
 	}
-	public static function getFieldForm($type = false){
+	public static function getFieldForm($type = false, $defaultEmail = false){
 		$response = array();	
 		
 		if(!$type or $type == 'none'){
@@ -67,6 +67,7 @@ class ContactHelper
 									'<option value="b2jDynamicText">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_TEXT').'</option>'.
 									'<option value="b2jDynamicDropdown">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_DROPDOWN').'</option>'.
 									'<option value="b2jDynamicTextarea">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_TEXT_AREA').'</option>'.
+									'<option value="b2jDynamicEmail">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_EMAIL').'</option>'.
 									'<option value="b2jDynamicCheckbox">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_CHECK_BOX').'</option>'.
 									'<option value="b2jDynamicDate">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_DATE').'</option>'.
 									'<option value="b2jDynamicLabel">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_LABEL').'</option>'.
@@ -96,6 +97,13 @@ class ContactHelper
 			        $form .= self::getGeneralFieldTextareaDefault();
 					$form .= self::getGeneralFieldState();
 			        break;
+			    case 'b2jDynamicEmail':
+			        $response['type'] = 'b2jDynamicEmail';
+			        $form .= self::getGeneralFieldName();
+			        $form .= self::getGeneralFieldDefault();
+			        $form .= self::getGeneralFieldEmailDefault($defaultEmail);
+					$form .= self::getGeneralFieldState();
+			        break;    
 			    case 'b2jDynamicCheckbox':
 			        $response['type'] = 'b2jDynamicCheckbox';
 			        $form .= self::getGeneralFieldName();
@@ -156,6 +164,25 @@ class ContactHelper
 							'</div>';
 		return $generalFieldName;	
 	}
+	public static function getGeneralFieldEmailDefault($default = false){
+
+		if($default && $default != "false"){
+			$disabled = "";	
+		}else{
+			$disabled = 'disabled="disabled"';
+		}
+
+		$generalFieldName = '<div class="control-group">'.
+							  	'<div class="control-label">'.
+									'<label class="hasTooltip" title="'.JText::_('COM_B2JCONTACT_DEFAULT_EMAIL').'" for="b2jNewFieldRadio">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_DEFAULT_LBL').' *</label>'.
+								'</div>'.
+								'<div class="controls b2jDefaultEmailCon">'.
+									'<input type="radio" name="b2jNewFieldRadio" '.$disabled.' value="1"><label>'.JText::_('COM_B2JCONTACT_YES').'</label>'.
+									'<input type="radio" name="b2jNewFieldRadio" '.$disabled.' value="0" checked><label>'.JText::_('COM_B2JCONTACT_NO').'</label>'.
+								'</div>'.
+							'</div>';
+		return $generalFieldName;	
+	}
 	public static function getGeneralFieldDefault(){
 		$generalFieldName = '<div class="control-group">'.
 							  	'<div class="control-label">'.
@@ -211,29 +238,34 @@ class ContactHelper
 					'</div>';
 		return $buttons;	
 	}
-	public static function saveNewField($type,$fieldName,$defaultValue,$fieldState,$fieldGroup,$fieldItems,$newGroupName,$key){//,$b2jGroups
+	public static function saveNewField($type,$fieldName,$defaultValue,$fieldState,$fieldGroup,$fieldItems,$fieldRadio,$newGroupName,$key){//,$b2jGroups
 		$item = new stdClass;
 		$item->b2jFieldName = $fieldName;
 		$item->b2jDefaultValue = $defaultValue;
 		$item->b2jFieldState = $fieldState;
 		$item->b2jFieldGroup = $fieldGroup;
 		$item->b2jFieldItems = $fieldItems;
+		$item->b2jFieldRadio = $fieldRadio;
 		$item->b2jNewGroupName = $newGroupName;
 		$item->b2jFieldOrdering = $key;
 
 		switch ($type) {
 			case 'b2jDynamicText':
-				$response['html'] = self::rendTextField($item,$key);//,$gradingGroups
+				$response['html'] = self::rendTextField($item,$key);
 				$typeFormat = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_TEXT');
 				break;
 			case 'b2jDynamicDropdown':
-				$response['html'] = self::rendDropdownField($item,$key);//,$gradingGroups
+				$response['html'] = self::rendDropdownField($item,$key);
 				$typeFormat = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_DROPDOWN');
 				break;
 			case 'b2jDynamicTextarea':
-				$response['html'] = self::rendTextareaField($item,$key);//,$gradingGroups
+				$response['html'] = self::rendTextareaField($item,$key);
 				$typeFormat = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_TEXT_AREA');
 				break;
+			case 'b2jDynamicEmail':
+				$response['html'] = self::rendEmailField($item,$key);
+				$typeFormat = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_EMAIL');
+				break;	
 			case 'b2jDynamicCheckbox':
 				$response['html'] = self::rendCheckboxField($item,$key);//,$gradingGroups
 				$typeFormat = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_CHECK_BOX');
@@ -247,11 +279,15 @@ class ContactHelper
 				$typeFormat = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_TYPE_LABEL');
 				break;									
 		}
+		$icon = '';
+		if($type == 'b2jDynamicEmail' && $item->b2jFieldRadio == '1'){
+			$icon = "<span class='email_default'> (Default)</span>";
+		}
 		$response['inTable'] ='<li id="item_'.$key.'" class="row'.$key.' fields" key="'.$key.'" groupId="'.(string)$item->b2jFieldGroup.'">
 									<div>
 										<i class="icon-menu"></i>
 										<span class="b2j-dynamic-field-name">'.$item->b2jFieldName.'</span>
-										<span class="b2j-dynamic-field-type">'.$typeFormat.'</span>
+										<span class="b2j-dynamic-field-type">'.$typeFormat.$icon.'</span>
 										<span style="float:right;">
 											<input type="button" class="b2j-dynamic-field-action-links edit" isGroup="false" value="'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_EDIT_BTN').'" onClick="showEditField(this,'.$key.')">
 											<input type="button" class="b2j-dynamic-field-action-links delete" isGroup="false" value="'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_DELETE_BTN').'" onClick="deleteField(this,'.$key.');">
@@ -270,7 +306,7 @@ class ContactHelper
 		}
 		return $response;
 	}
-	public static function rendTextField($item,$key){//,$groups
+	public static function rendTextField($item,$key){
 		
 		$textField = '<div id="b2j_'.$key.'" class="b2jFields">'.
 						 '<div class="control-group">'.
@@ -311,9 +347,7 @@ class ContactHelper
 		$textField .=			'</select>'.
 							'</div>'.
 						 '</div>';
-						//'<input fieldKey="'.$key.'" fieldType="b2jFieldCurrentGroup" type="hidden" value="'.$item->b2jFieldGroup.'" size="26">';
-		
-		//$textField .= ContactHelper::rendGroupForEdit($groups,$key,$item->b2jFieldGroup);
+						
 		$textField .= ContactHelper::rendButtons("b2jDynamicText",$key);
 		$textField .='</div>';
 
@@ -418,6 +452,70 @@ class ContactHelper
 						 //'<input fieldKey="'.$key.'" fieldType="b2jFieldCurrentGroup" type="hidden" value="'.$item->b2jFieldGroup.'" size="26">';
 		$textField .= ContactHelper::rendButtons("b2jDynamicTextarea",$key);
 		$textField .='</div>';
+
+		return $textField;	
+	}
+	public static function rendEmailField($item,$key){
+		
+		$textField = '<div id="b2j_'.$key.'" class="b2jFields b2jDefaultEmailCon">'.
+						 '<div class="control-group">'.
+						  	'<div class="control-label">'.
+								'<label title="">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_NAME_LBL').' *</label>'.
+							'</div>'.
+							'<div class="controls">'.
+								'<input fieldKey="'.$key.'" fieldType="b2jFieldName" type="text" value="'.$item->b2jFieldName.'" size="26">'.
+							'</div>'.
+						 '</div>'.
+						 '<div class="control-group">'.
+						  	'<div class="control-label">'.
+								'<label title="">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_PLACEHOLDER_LBL').'</label>'.
+							'</div>'.
+							'<div class="controls">'.
+								'<input fieldKey="'.$key.'" fieldType="b2jDefaultValue" type="text" value="'.$item->b2jDefaultValue.'" size="26">'.
+							'</div>'.
+						 '</div>'.
+						 '<div class="control-group">'.
+						  	'<div class="control-label">'.
+								'<label class="hasTooltip" title="'.JText::_('COM_B2JCONTACT_DEFAULT_EMAIL').'" title="">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_DEFAULT_LBL').'</label>'.
+							'</div>';
+							if($item->b2jFieldRadio == '1'){
+								$checkedYes = "checked";
+								$checkedNo = "";
+							}else{
+								$checkedYes = "";
+								$checkedNo = "checked";
+							}
+		$textField .= 		'<div class="controls b2jDefaultEmailControlsCon">'.
+									'<input fieldKey="'.$key.'" fieldType="b2jFieldRadio" type="radio" name="b2jFieldRadio'.$key.'" value="1" '.$checkedYes.'><label>'.JText::_('COM_B2JCONTACT_YES').'</label>'.
+									'<input fieldKey="'.$key.'" fieldType="b2jFieldRadio" type="radio" name="b2jFieldRadio'.$key.'" value="0" '.$checkedNo.'><label>'.JText::_('COM_B2JCONTACT_NO').'</label>'.
+							'</div>'.
+						 '</div>'.
+						 '<div class="control-group">'.
+						  	'<div class="control-label">'.
+								'<label title="">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_STATE_LBL').' *</label>'.
+							'</div>'.
+							'<div class="controls">'.
+								'<select  fieldKey="'.$key.'" fieldType="b2jFieldState" >';
+		
+									$options[0]['value'] = '0';
+									$options[0]['text'] = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_OPTION_DISABLED_LBL');
+									$options[1]['value'] = '1';
+									$options[1]['text'] = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_OPTION_OPTIONAL_LBL');
+									$options[2]['value'] = '2';
+									$options[2]['text'] = JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_OPTION_REQUIRED_LBL');
+									foreach ($options as $option)
+									{
+										$selected = ($option['value'] == $item->b2jFieldState) ? $selected = 'selected="selected"' : "";
+										$textField .= '<option value="' . $option['value'] . '"  ' . $selected . '>' . $option['text'] . '</option>';
+									}
+
+		$textField .=			'</select>'.
+							'</div>'.
+						 '</div>';
+						
+		$textField .= ContactHelper::rendButtons("b2jDynamicEmail",$key);
+		$textField .='</div>';
+
 
 		return $textField;	
 	}
@@ -609,25 +707,6 @@ class ContactHelper
 		$groupHtml .='</div>';
 		return $groupHtml;	
 	}
-	// public static function rendGroupForEdit($groups,$key,$itemGroup){ // for group editing
-		
-	// 	$editGroup =  '<div class="control-group">'.
-	// 					  	'<div class="control-label">'.
-	// 							'<label title="">'.JText::_('COM_B2JCONTACT_DYNAMIC_FIELD_FIELD_GROUP_LBL').' *</label>'.
-	// 						'</div>'.
-	// 						'<div class="controls">'.
-	// 							'<select fieldKey="'.$key.'" fieldKey="b2jFieldGroup" fieldType="b2jFieldGroup" >';
-	// 								foreach ($groups as $k => $group)
-	// 								{
-	// 									$selected = ($group->val == $itemGroup) ? $selected = 'selected="selected"' : "";
-	// 									$editGroup .= '<option value="' . $group->val . '"  ' . $selected . '>' . $group->title . '</option>';
-	// 								}
-	// 	$editGroup .=			'</select>'.
-	// 						'</div>'.
-	// 					 '</div>';
-
-	// 	return $editGroup;
-	// }
 	public static function rendButtons($type,$key){
 		$buttons = '<div class="control-group">'.
 						'<div class="controls">'.

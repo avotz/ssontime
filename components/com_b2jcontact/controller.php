@@ -29,4 +29,18 @@ class B2jContactController extends JControllerLegacy
 		
 		return parent::display($cachable, $urlparams);
 	}
+	
+	function resetAttachments() {
+		$helpdir = JPATH_BASE . '/components/' . $GLOBALS["com_name"] . '/helpers/';
+		@require_once($helpdir . "b2jsession.php");
+		$jsession = JFactory::getSession();
+		
+		$bid = JFactory::getApplication()->input->get("bid",false);
+		$b2jcomid = JFactory::getApplication()->input->get("b2jcomid",false);
+		$b2jmoduleid = JFactory::getApplication()->input->get("b2jmoduleid",false);
+
+		$b2jsession = new B2JSession($jsession->getId(), $b2jcomid, $b2jmoduleid, $bid);
+		$b2jsession->Clear('filelist');
+		exit();
+    }
 }

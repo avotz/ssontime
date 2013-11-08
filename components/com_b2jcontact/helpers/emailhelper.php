@@ -25,15 +25,16 @@ class B2jEmailHelper
 		return $this->{$data->select}($data);
 	}
 
-	public function submitter($data)
-	{
-		$application = JFactory::getApplication();
-		$name = "_" . md5($this->Params->get("sender0") . $application->b2jcomid . $application->b2jmoduleid);
-		$name = JRequest::getVar($name, NULL, "POST");
-		$address = "_" . md5($this->Params->get("sender1") . $application->b2jcomid . $application->b2jmoduleid);
-		$address = JRequest::getVar($address, NULL, "POST");
-		return array($address, $name);
-	}
+
+	// public function submitter($data)
+	// {
+	// 	$application = JFactory::getApplication();
+	// 	$name = "_" . md5($this->Params->get("sender0") . $application->b2jcomid . $application->b2jmoduleid);
+	// 	$name = JRequest::getVar($name, NULL, "POST");
+	// 	$address = "_" . md5($this->Params->get("sender1") . $application->b2jcomid . $application->b2jmoduleid);
+	// 	$address = JRequest::getVar($address, NULL, "POST");
+	// 	return array($address, $name);
+	// }
 
 	public function admin($data)
 	{

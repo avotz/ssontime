@@ -82,3 +82,45 @@
 2013-09-30 19:06:31 [fieldsbuilder] testing function [checkdnsrr]... [0]
 2013-09-30 19:06:31 [fieldsbuilder] --- Method choosen to query DNS records is [disabled] ---
 2013-09-30 19:06:31 [installscript] Component installation seems successfull.
+2013-11-08 05:06:07 [installscript] Running update on: WINNT | Apache/2.4.4 (Win32) OpenSSL/0.9.8y PHP/5.4.19 | php 5.4.19 | safe_mode: 0 | interface: apache2handler
+2013-11-08 05:06:07 [installscript] Found 2 chained extensions.
+2013-11-08 05:06:07 [installscript] Installing LIBRARY... [SUCCESS]
+2013-11-08 05:06:07 [installscript] Installing MODULE... [SUCCESS]
+2013-11-08 05:06:07 [installscript] Determining correct file permissions...  [100666]
+2013-11-08 05:06:07 [installscript] setting permissions for [C:\xampp\htdocs\ssontime\components\com_b2jcontact\lib\functions.php]... [1]
+2013-11-08 05:06:07 [installscript] Determining correct directory permissions...  [40777]
+2013-11-08 05:06:07 [installscript] setting permissions for [C:\xampp\htdocs\ssontime/components]... [1]
+2013-11-08 05:06:07 [installscript] setting permissions for [C:\xampp\htdocs\ssontime/components/com_b2jcontact]... [1]
+2013-11-08 05:06:07 [installscript] setting permissions for [C:\xampp\htdocs\ssontime/components/com_b2jcontact/lib]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] --- Determining if this system is able to draw captcha images ---
+2013-11-08 05:06:07 [b2jcaptchaimage] gd extension found. Let's see if it works.
+2013-11-08 05:06:07 [b2jcaptchaimage] GD Version... [bundled (2.1.0 compatible)]
+2013-11-08 05:06:07 [b2jcaptchaimage] FreeType Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] FreeType Linkage... [with freetype]
+2013-11-08 05:06:07 [b2jcaptchaimage] T1Lib Support... []
+2013-11-08 05:06:07 [b2jcaptchaimage] GIF Read Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] GIF Create Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] JPEG Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] PNG Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] WBMP Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] XPM Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] XBM Support... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] JIS-mapped Japanese Font Support... []
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imagecreate]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imagecolorallocate]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imagefill]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imageline]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imagettftext]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imagejpeg]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] testing function [imagedestroy]... [1]
+2013-11-08 05:06:07 [b2jcaptchaimage] --- Method choosen to draw captcha images is [use_gd] ---
+2013-11-08 05:06:07 [b2jmimetype] --- Determining if this system is able to detect file mime types ---
+2013-11-08 05:06:07 [b2jmimetype] fileinfo extension not found
+2013-11-08 05:06:07 [b2jmimetype] mime_content_type() function not found
+2013-11-08 05:06:07 [b2jmimetype] Not a unix environment. No way to get mime info by calling system shell functions.
+2013-11-08 05:06:07 [b2jmimetype] --- Method choosen to detect file mime types is [disabled] ---
+2013-11-08 05:06:07 [fieldsbuilder] --- Determining if this system is able to query DNS records ---
+2013-11-08 05:06:07 [fieldsbuilder] checkdnsrr function found. Let's see if it works.
+2013-11-08 05:06:07 [fieldsbuilder] testing function [checkdnsrr]... [0]
+2013-11-08 05:06:07 [fieldsbuilder] --- Method choosen to query DNS records is [disabled] ---
+2013-11-08 05:06:07 [installscript] Component installation seems successfull.

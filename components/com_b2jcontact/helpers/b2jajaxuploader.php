@@ -103,7 +103,7 @@ class B2JAjaxUploader extends B2JDataPump
 
 	"Joomla.JText.load(" .
 		"{" .
-			"\"COM_B2JCONTACT_BROWSE_FILES\":'" .  JText::_("COM_B2JCONTACT_BROWSE_FILES") . "'," .
+			"\"COM_B2JCONTACT_BROWSE_FILES\":'" .  $this->Params->get("upload_btn") . "'," .
 			"\"JCANCEL\":'" . JText::_("JCANCEL") . "'," .
 			"\"COM_B2JCONTACT_FAILED\":'" . JText::_("COM_B2JCONTACT_FAILED") . "'," .
 			"\"COM_B2JCONTACT_SUCCESS\":'" . JText::_("COM_B2JCONTACT_SUCCESS") . "'," .
@@ -111,6 +111,7 @@ class B2JAjaxUploader extends B2JDataPump
 		"}" .
 	");" .
 				"CreateUploadButton('b2jupload_$id', '$action', " . $this->Application->b2jcomid . ", " . $this->Application->b2jmoduleid . ", '" . $this->Application->owner . "', " . $this->Application->oid . ");" .
+				"ResetBind('$id', ". $this->Application->bid .", " . $this->Application->b2jcomid . ", " . $this->Application->b2jmoduleid . ", '" . $this->Application->owner . "');" .
 				"});" .
 				"</script>" .
 
@@ -129,9 +130,11 @@ class B2JAjaxUploader extends B2JDataPump
 		else $filelist = array();
 
 	
-		$result .= '<div class="control-group">' .
-            '<label class="control-label"></label>'.
-			'<div class="controls">';
+		$result .= '<div class="control-group">';
+        if($this->Params->get("labelsdisplay") == 1){
+            $result .= '<label class="control-label"></label>';
+        }  
+		$result .= '<div class="controls">';
 
 
 		$result .= '<ul id="uploadlist-' . $this->Application->owner . $this->Application->oid . '" class="qq-upload-list">';
@@ -140,10 +143,12 @@ class B2JAjaxUploader extends B2JDataPump
 				$result .=
 					'<li class="qq-upload-success">' .
 						'<span class="qq-upload-file">' . $this->format_filename(substr($file, 14)) . '</span>' .
-						'<span class="qq-upload-success-text">' . JTEXT::_($GLOBALS["COM_NAME"] . '_SUCCESS') . '</span>' .
-						'</li>';
+						'<span class="qq-upload-success-text">' . JTEXT::_($GLOBALS["COM_NAME"] . '_SUCCESS') . ' </span>' .
+					'</li>';
 			}
 			$result .= '</ul>' . PHP_EOL;
+			
+			$result .= '<a href="javascript:void(0)" class="" onClick="ResetAttachments(this.parentNode.parentNode.parentNode)">'. $this->Params->get("reset_attachment_btn") .'</a>';
 
 		$result .= '</div>' .
 			'</div>' . PHP_EOL; 

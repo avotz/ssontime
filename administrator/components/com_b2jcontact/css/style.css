@@ -432,6 +432,10 @@ div.form-horizontal .tab-pane#dynamicfields .control-group .controls input.b2j-b
 	color: #ffffff;
 	font-size: 12px;
 }
+.b2jDefaultEmailControlsCon .radiobutton .point
+, .b2jDefaultEmailCon .radiobutton .point{
+	background: #88a771;	
+}
 .b2j-fileds-save{
 	background-color: #88a771;
 }

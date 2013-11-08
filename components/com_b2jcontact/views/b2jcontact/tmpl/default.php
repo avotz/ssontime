@@ -37,7 +37,7 @@
 			name="b2j_form_c<?php echo $b2jcomid; ?>"
 			class="b2j_form b2jform-<?php echo $this->cparams->get("form_layout", "extended"); ?>"
 			method="post"
-			action="<?php echo("#b2jcomid_" . $b2jcomid);?>">
+			action="<?php echo($_SERVER["REQUEST_URI"]."#b2jcomid_" . $b2jcomid);?>">
 		<?php echo($this->FormText); ?>
 	</form>
 	

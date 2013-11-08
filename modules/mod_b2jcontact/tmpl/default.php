@@ -31,10 +31,9 @@
 			name="b2j_form_m<?php echo $module->id; ?>"
 			class="b2j_form b2jform-<?php echo $params->get("form_layout", "extended"); ?>"
 			method="post"
-			action="<?php echo($action); ?>">
+			action="<?php echo($_SERVER["REQUEST_URI"].$action); ?>">
 		<?php echo($form_text); ?>
 	</form>
 	<?php } ?>
 
 </div>
-

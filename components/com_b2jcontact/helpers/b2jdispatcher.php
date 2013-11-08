@@ -50,19 +50,20 @@ abstract class B2JDispatcher extends B2JDataPump
 
 	protected function submittername()
 	{
-		return
-			isset($this->FieldsBuilder->Fields['sender0']) ?
-				$this->FieldsBuilder->Fields['sender0']['Value'] :
-				$this->Application->getCfg("fromname");
+		return $this->Application->getCfg("fromname");
+
+			// isset($this->FieldsBuilder->Fields['sender0']) ?
+			// 	$this->FieldsBuilder->Fields['sender0']['Value'] :
+			// 	$this->Application->getCfg("fromname");
 	}
 
 
 	protected function submitteraddress()
 	{
 		$addr =
-			isset($this->FieldsBuilder->Fields['sender1']['Value']) &&
-				!empty($this->FieldsBuilder->Fields['sender1']['Value']) ?
-				$this->FieldsBuilder->Fields['sender1']['Value'] :
+			isset($this->FieldsBuilder->senderEmail->b2jFieldValue) &&
+				!empty($this->FieldsBuilder->senderEmail->b2jFieldValue) ?
+				$this->FieldsBuilder->senderEmail->b2jFieldValue :
 				$this->Application->getCfg("mailfrom");
 
 		return JMailHelper::cleanAddress($addr);
@@ -88,9 +89,11 @@ abstract class B2JDispatcher extends B2JDataPump
         
         foreach ($this->FieldsBuilder->DynamicFields as $key => $field)
 		{
-			foreach ($field[1] as $dynamicfield){
-                $result .= $this->AddToBodyDynamic($dynamicfield);
-            }
+			if($field[0]->state != 0){
+				foreach ($field[1] as $dynamicfield){
+	                $result .= $this->AddToBodyDynamic($dynamicfield);
+	            }
+        	}
 		}
 
 		$result .= PHP_EOL;
@@ -106,6 +109,7 @@ abstract class B2JDispatcher extends B2JDataPump
     
     protected function AddToBodyDynamic(&$field)
 	{
+		if ($field->b2jFieldState == 0) return "";
 		return "*" . JFilterInput::getInstance()->clean($field->b2jFieldName, "") . "*" . PHP_EOL . JFilterInput::getInstance()->clean($field->b2jFieldValue, "") . PHP_EOL . PHP_EOL;
 	}
 

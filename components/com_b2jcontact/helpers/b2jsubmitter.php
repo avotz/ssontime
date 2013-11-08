@@ -36,7 +36,7 @@ class B2JSubmitter extends B2JDataPump
 
 		$field = array();
 		if ($this->Params->get("copy_to_submitter", 0) == 2 &&
-			(bool)$this->Params->get("sender1display", 0)
+			(bool)$this->fieldsbuilder->senderEmail
 		) 
 		{
 
@@ -80,15 +80,14 @@ class B2JSubmitter extends B2JDataPump
 			switch ($this->Params->get("resettype"))
 			{
 				case 1:
-					
-					$result .= '<input class="btn btn-danger" type="reset" onClick="ResetB2jControls();" value="' . $this->Params->get("resettext") . '">' . PHP_EOL;
+					$result .= '<input class="btn btn-danger" type="reset" onClick="ResetB2jControls(this.form);" value="' . $this->Params->get("resettext") . '">' . PHP_EOL;
 					break;
 
 				default:
 				
 
 					$reseticon = $this->Params->get("reseticon");
-					$result .= '<button class="btn btn-danger" type="reset" onClick="ResetB2jControls();">' . PHP_EOL .
+					$result .= '<button class="btn btn-danger" type="reset" onClick="ResetB2jControls(this.form);">' . PHP_EOL .
 						'<span ';
 					//if ($reseticon != "-1") $result .= 'style="background: url(' . JUri::base(true) . '/media/' . $GLOBALS["com_name"] . '/images/reset/' . $reseticon . ') no-repeat scroll ' . $GLOBALS["left"] . ' top transparent; padding-' . $GLOBALS["left"] . ':20px;" ';
                     if ($reseticon != "-1") $result .= 'style="background: url(' . JUri::base(true) . '/media/' . $GLOBALS["com_name"] . '/images/reset.png) no-repeat ' . $GLOBALS["left"] . ' center transparent; padding-' . $GLOBALS["left"] . ':20px;" ';

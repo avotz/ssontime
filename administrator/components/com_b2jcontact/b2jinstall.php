@@ -28,7 +28,7 @@ class B2jInstaller
 
 
 	public function install($parent)
-	{
+	{	
 		$this->initialize($parent);
 
 		// Environment data
@@ -102,10 +102,170 @@ class B2jInstaller
 
 		$result["type"] = "COMPONENT";
 		$result["result"] = "SUCCESS";
+		$this->conver_old_field();
+		
 		$this->results[$this->component_name] = $result;
 	}
 
+	private function conver_old_field(){
+		
+		$db = JFactory::getDBO();
 
+		$query = 'SELECT `id`,`params` FROM #__b2jcontact_details';
+		$db->setQuery($query);
+
+		$oldContacts = $db->loadAssocList();
+		if ( $oldContacts ) {
+			$newFields = array();
+			foreach ($oldContacts as $oldContact) {
+				$replase = false;
+				$nameField = false;
+				$emailField = false;
+				$haveGroup = false;
+				$orderingPlus = 0;
+				$changeGroup = false;
+
+				$params = json_decode($oldContact['params']);//,true
+				
+
+				if(isset($params->sender0display) AND $params->sender0display != 0){
+					$replase = true;
+					$nameField = true;
+					$nameFieldName = $params->sender0;
+					$nameFieldState = $params->sender0display;
+					
+					$orderingPlus  ++;
+				}
+
+				if(isset($params->sender1display) AND $params->sender1display != 0){
+					$replase = true;
+					$emailField = true;
+					$emailFieldName = $params->sender1;
+					$emailFieldState = $params->sender1display;
+
+					$orderingPlus  ++;
+				}
+				if($replase){
+					$itemgroups = json_decode($params->itemgroups);
+
+					foreach ($itemgroups as $key => $itemgroup) {
+						if($itemgroup[0]->ordering == 1){
+							$haveGroup = $key; 	
+						}
+					}
+
+					if(!$haveGroup){
+						$changeGroup = true;
+						$haveGroup = 1;
+						$newGroup['0'] = new stdClass();
+						$newGroup['0']->title = 'group1';
+						$newGroup['0']->ordering = 1;
+						$newGroup['0']->class = '';
+						$newGroup['0']->state = '1';
+
+						$itemgroups->$haveGroup = $newGroup;
+					}
+
+					$dynamicfields = json_decode($params->dynamicfields);
+					
+					$dynamicfieldsCount = 0;
+
+					if($dynamicfields){
+						foreach ($dynamicfields as $key => $dynamicfield) {
+							$dynamicfield[0]->b2jFieldOrdering = $dynamicfield[0]->b2jFieldOrdering + $orderingPlus; 
+							$dynamicfield[0]->b2jFieldRadio    = 0; 
+
+							$dynamicfieldsCount++;
+						}
+					}else{
+						$dynamicfields = new stdClass();						
+					}
+					$dynamicfieldsCount = $dynamicfieldsCount.'';
+
+					if($nameField){
+						$newField['0'] = new stdClass();
+						$newField['0']->b2jDefaultValue = '';
+						$newField['0']->b2jFieldKey     = $dynamicfieldsCount;
+						$newField['0']->type = 'b2jDynamicText';
+						$newField['0']->b2jFieldValue = '';
+						$newField['0']->b2jFieldName = $nameFieldName;
+						$newField['0']->b2jFieldState = $nameFieldState;	
+						$newField['0']->b2jFieldGroup = $haveGroup;	
+						$newField['0']->b2jFieldOrdering = 0;
+						$newField['0']->b2jFieldRadio = 0;
+
+						$dynamicfields->$dynamicfieldsCount = $newField;	
+					}
+					
+					if($emailField){
+
+						if($nameField){
+							$countForEmail = $dynamicfieldsCount + 1;
+							$orderingForEmail = 1;
+						}else{
+							$orderingForEmail = 0;
+							$countForEmail = $dynamicfieldsCount;
+						}
+
+						$countForEmail = $countForEmail.'';
+
+						$newField['0'] = new stdClass();
+						
+						$newField['0']->b2jDefaultValue = '';
+						$newField['0']->b2jFieldKey     = $countForEmail;
+						$newField['0']->type = 'b2jDynamicEmail';
+						$newField['0']->b2jFieldValue = '';
+						$newField['0']->b2jFieldName = $emailFieldName;
+						$newField['0']->b2jFieldState = $emailFieldState;	
+						$newField['0']->b2jFieldGroup = $haveGroup;	
+						$newField['0']->b2jFieldOrdering = $orderingForEmail;
+						$newField['0']->b2jFieldRadio = 1;
+
+						$dynamicfields->$countForEmail = $newField;
+					}
+
+					if($changeGroup){
+						$params->itemgroups = json_encode($itemgroups);
+					}
+					
+					if(isset($params->sender0)){
+						$params->sender0 = null;
+					}
+					if(isset($params->sender0display)){
+						$params->sender0display = null;
+					}
+					if(isset($params->sender0order)){
+						$params->sender0order = null;
+					}
+					if(isset($params->sender1)){
+						$params->sender1 = null;
+					}
+					if(isset($params->sender1display)){
+						$params->sender1display = null;
+					}
+					if(isset($params->sender1order)){
+						$params->sender1order = null;
+					}
+					
+					$params->upload_btn = "Browse files";
+					$params->reset_attachment_btn = "Reset attachments";
+					
+					$params->dynamicfields = json_encode($dynamicfields);
+					$params = htmlspecialchars(json_encode($params, ENT_NOQUOTES));
+					$params = str_replace("&quot;",'"', $params);
+					$params = str_replace("&lt;",'<', $params);
+					$params = str_replace("&gt;",'>', $params);
+					
+					$query = 'UPDATE #__b2jcontact_details'
+								. ' SET params = "'. mysql_real_escape_string($params) .'"'
+								. ' WHERE id = ' . (int) $oldContact['id'];
+
+					$db->setQuery($query);
+					$db->execute();
+				}
+			}
+		}
+	}
 	private function check_environment(&$parent)
 	{
 		$this->check_permissions($parent);

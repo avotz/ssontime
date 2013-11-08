@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>B2J Contact</name>
-	<creationDate>September 2013</creationDate>
+	<creationDate>October 2013</creationDate>
 	<author>Bang2Joom</author>
 	<authorEmail>info@bang2joom.com</authorEmail>
 	<authorUrl>http://www.bang2joom.com</authorUrl>
 	<copyright>Copyright 2012 Bang2Joom. All rights reserved.</copyright>
 	<license>GNU/GPL v3</license>
-	<version>1.5</version>
+	<version>1.7</version>
 	<description>MOD_B2JCONTACT_DESCRIPTION</description>
 
 	<files>

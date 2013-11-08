@@ -7,6 +7,7 @@ JText['COM_B2JCONTACT_DYNAMIC_DELETE_ITEM_QUESTION'] = '<?php echo JText::_("COM
 JText['COM_B2JCONTACT_DYNAMIC_FIELD_DELETE_BTN'] = '<?php echo JText::_("COM_B2JCONTACT_DYNAMIC_FIELD_DELETE_BTN"); ?>';
 JText['COM_B2JCONTACT_DYNAMIC_FIELD_EDIT_BTN'] = '<?php echo JText::_("COM_B2JCONTACT_DYNAMIC_FIELD_EDIT_BTN"); ?>';
 
+var defaultEmail;
 
 function showAddField($type)
 {
@@ -23,6 +24,7 @@ function showAddField($type)
 			task : "showAddField",
 			dataType: 'json',
 			type: $type,
+			defaultEmail: defaultEmail
 			}),
 		success: function(res){
 			var obj = jQuery.parseJSON(res);
@@ -84,7 +86,8 @@ function showAddField($type)
 			jQuery('select').chosen({
 				disable_search_threshold : 10,
 				allow_single_deselect : true
-			});                            
+			});
+			jQuery('.hasTooltip').tooltip();                     
 		}
 	 });
 }
@@ -119,6 +122,32 @@ function escapeHtml(string) {
    	}
    	return string;
  }
+function checkDefaultEmail() {
+	if(window.value !== undefined){
+		jQuery('.b2jDefaultEmailCon').each(function(){	
+			id = jQuery(this).attr('id');
+			jQuery("#" + id + " .b2jDefaultEmailControlsCon .radiobutton").removeClass('disabled');
+		});
+		for(key in value){
+			if(value[key] !== undefined && value[key].type == "b2jDynamicEmail"){
+				if(value[key].b2jFieldRadio == "1"){
+					jQuery('.b2jDefaultEmailCon').each(function(){	
+						if(jQuery(this).attr('id') != 'b2j_'+ value[key].b2jFieldKey){
+							id = jQuery(this).attr('id');
+							jQuery("#" + id + " .b2jDefaultEmailControlsCon input:radio[value='0']").click();
+							jQuery("#" + id + " .b2jDefaultEmailControlsCon .radiobutton").addClass('disabled');
+						}
+					});
+					return false;
+				}
+			}
+		}
+		return true;
+	}else{
+		return true;
+	}
+}
+
 function submitB2jNewField(){
 	removeNotValid();
 	$type 	     	= jQuery("#b2jNewFieldType").val();
@@ -138,7 +167,12 @@ function submitB2jNewField(){
 	}else{
 		$fieldItems = false;	
 	}
-	if($type == 'b2jDynamicText' || $type == 'b2jDynamicTextarea' || $type == 'b2jDynamicCheckbox' || $type == 'b2jDynamicDropdown' || $type == 'b2jDynamicDate'){
+	if($type == 'b2jDynamicEmail'){
+		$fieldRadio = jQuery("input:radio[name=b2jNewFieldRadio]:checked").val();	
+	}else{
+		$fieldRadio = false;	
+	}
+	if($type == 'b2jDynamicText' || $type == 'b2jDynamicEmail' || $type == 'b2jDynamicTextarea' || $type == 'b2jDynamicCheckbox' || $type == 'b2jDynamicDropdown' || $type == 'b2jDynamicDate'){
 		$defaultValue = jQuery("#b2jNewFieldDefault").val();		
 	}else{
 		$defaultValue = false;	
@@ -188,7 +222,10 @@ function submitB2jNewField(){
 	if($type == 'b2jDynamicDropdown'){
 		value[$key]['b2jFieldItems'] = escapeHtml($fieldItems);
 	}
-	if($type == 'b2jDynamicText' || $type == 'b2jDynamicTextarea' || $type == 'b2jDynamicCheckbox' || $type == 'b2jDynamicDropdown' || $type == 'b2jDynamicDate'){
+	if($type == 'b2jDynamicEmail'){
+		value[$key]['b2jFieldRadio'] = escapeHtml($fieldRadio);
+	}
+	if($type == 'b2jDynamicText' || $type == 'b2jDynamicEmail' || $type == 'b2jDynamicTextarea' || $type == 'b2jDynamicCheckbox' || $type == 'b2jDynamicDropdown' || $type == 'b2jDynamicDate'){
 		value[$key]['b2jDefaultValue'] = escapeHtml($defaultValue);
 	}
 	value[$key]['b2jFieldKey'] = $key;
@@ -214,6 +251,7 @@ function submitB2jNewField(){
 			fieldState: $fieldState,
 			fieldGroup: $fieldGroup,
 			fieldItems: $fieldItems,
+			fieldRadio: $fieldRadio,
 			newGroupName: $newGroupName,
 			key: $key,
 			//b2jGroups: $groups,
@@ -241,6 +279,7 @@ function submitB2jNewField(){
 				disable_search_threshold : 10,
 				allow_single_deselect : true
 			});
+			jQuery('.hasTooltip').tooltip(); 
 		}                                
 	 });
 }
@@ -455,6 +494,17 @@ function showEditField(elem,id){
 			if(type == "b2jDynamicText"){
 				value[parseInt(key)]["b2jDefaultValue"] = escapeHtml(jQuery("#b2j_"+key+" input[fieldType='b2jDefaultValue']").val());
 			}
+			if(type == "b2jDynamicEmail"){
+				value[parseInt(key)]["b2jDefaultValue"] = escapeHtml(jQuery("#b2j_"+key+" input[fieldType='b2jDefaultValue']").val());
+				value[parseInt(key)]["b2jFieldRadio"] = escapeHtml(jQuery("#b2j_"+key+" input:radio[name=b2jFieldRadio"+key+"]:checked").val());
+				console.log(value[parseInt(key)]["b2jFieldRadio"]);
+				if(jQuery("#b2j_"+key+" input:radio[name=b2jFieldRadio"+key+"]:checked").val() == 1){
+					jQuery( ".b2jContactFields" ).find( ".email_default" ).remove();
+					jQuery("li#item_"+key+" .b2j-dynamic-field-type").append('<span class="email_default"> (Default)</span>');
+				}else{
+					jQuery("li#item_"+key).find( ".email_default" ).remove();	
+				}
+			}
 			if(type == "b2jDynamicDropdown"){
 					if(!textValidation(jQuery("#b2j_"+key+" textarea[fieldType='b2jFieldItems']"))){
 					return false;
@@ -476,6 +526,7 @@ function showEditField(elem,id){
 			
 			var res = stringify(value);
 			jQuery("#"+id).attr("value",res);
+			defaultEmail = checkDefaultEmail();	
 		}else{
 			if(!textValidation(jQuery("#b2j_group_"+key+" input[fieldType='title']"))){
 				return false;
@@ -491,8 +542,12 @@ function showEditField(elem,id){
 	}		
 	closeEdit();
 }
-			
+
+jQuery(window).load(function(){
+	defaultEmail = checkDefaultEmail();
+})		
 jQuery(document).ready(function(){
+
     jQuery(document).on('keypress', 'textarea[fieldtype="b2jFieldItems"], #b2jNewFieldItems', function(event) {
         if (event.keyCode == 13) {
             event.preventDefault();
@@ -535,11 +590,17 @@ jQuery(document).ready(function(){
 						if(jQuery(this).attr("name")===undefined){
 							jQuery(this).attr("name","radio_"+repRadioCount)
 						}
+
+						if(jQuery(this).attr("disabled")=="disabled"){
+							disabled = "disabled";
+						}else{
+							disabled = "";	
+						}
 						if(jQuery(this).attr("checked")=="checked"){
-							var radioHTML = "<div rel='"+jQuery(this).attr("name")+"' class='radiobutton checked'><div class='point'></div></div>"
+							var radioHTML = "<div rel='"+jQuery(this).attr("name")+"' class='radiobutton checked "+disabled+"'><div class='point'></div></div>"
 						}
 						else{
-							var radioHTML = "<div rel='"+jQuery(this).attr("name")+"' class='radiobutton'><div class='point'></div></div>"
+							var radioHTML = "<div rel='"+jQuery(this).attr("name")+"' class='radiobutton "+disabled+"'><div class='point'></div></div>"
 						}
 						
 						jQuery(this).hide();
@@ -551,14 +612,15 @@ jQuery(document).ready(function(){
 					jQuery("input[type=radio]").eq(i).replaceRadio();
 				}	
 				jQuery(".radiobutton").live("click",function(event){
-					var rel = jQuery(this).attr("rel");
-					if(rel != ""){
-						jQuery(".radiobutton[rel|='"+rel+"']").removeClass("checked");
-						jQuery("input[name|='"+rel+"']").removeAttr("checked");
+					if(!jQuery(this).hasClass("disabled")){
+						var rel = jQuery(this).attr("rel");
+						if(rel != ""){
+							jQuery(".radiobutton[rel|='"+rel+"']").removeClass("checked");
+							jQuery("input[name|='"+rel+"']").removeAttr("checked");
+						}
+						jQuery(this).addClass("checked");
+						jQuery(this).next("input[type=radio]").attr("checked","checked");
 					}
-					jQuery(this).addClass("checked");
-					jQuery(this).next("input[type=radio]").attr("checked","checked");
-					
 				})	
 				jQuery("input[type=radio]").live("click",function(event){
 					jQuery(this).prev(".radiobutton").trigger("click");

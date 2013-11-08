@@ -33,7 +33,7 @@
 			(bool)JRequest::getVar($this->SafeName("copy_to_submitter" . $this->GetId()), NULL, 'POST') || 
 			($this->Params->get("copy_to_submitter", NULL) == 1); 
 
-			if (!$copy_to_submitter || !isset($this->FieldsBuilder->Fields['sender1']) || empty($this->FieldsBuilder->Fields['sender1']['Value']))
+			if (!$copy_to_submitter || !isset($this->FieldsBuilder->senderEmail->b2jFieldValue) || empty($this->FieldsBuilder->senderEmail->b2jFieldValue))
 			{
 				$this->B2JSession->Clear('filelist');
 
@@ -82,8 +82,17 @@
 			$from = $emailhelper->convert($submitteremailfrom);
 			$mail->setSender($from);
 
-			$submitteremailreplyto = $config->get("submitteremailreplyto");
-			$replyto = $emailhelper->convert($submitteremailreplyto);
+			//$submitteremailreplyto = $config->get("submitteremailreplyto");
+			//$replyto = $emailhelper->convert($submitteremailreplyto);
+
+			$application = JFactory::getApplication();
+			$name = $application->getCfg("fromname");
+			if(isset($this->FieldsBuilder->senderEmail->b2jFieldValue) && !empty($this->FieldsBuilder->senderEmail->b2jFieldValue)){
+				$replyto['0'] = $this->FieldsBuilder->senderEmail->b2jFieldValue; 	
+			}else{
+				$replyto['0'] = ''; 	
+			}
+			$replyto['1'] = $name; 	
 
 			$mail->ClearReplyTos();
 			$mail->addReplyTo($replyto);
@@ -92,7 +101,8 @@
 
 		private function set_to(&$mail)
 		{
-			$addr = $this->FieldsBuilder->Fields['sender1']['Value'];
+			//$addr = $this->FieldsBuilder->Fields['sender1']['Value'];
+			$addr =$this->FieldsBuilder->senderEmail->b2jFieldValue;
 			$mail->addRecipient(JMailHelper::cleanAddress($addr));
 		}
 

@@ -124,24 +124,7 @@
 			</field>
 			<field type="b2jtext" name="labels__width" wizard="150" label="COM_B2JCONTACT_LABELS_WIDTH_LBL" description="COM_B2JCONTACT_LABELS_WIDTH_DSC" size="4" default="px">
 			</field>
-			<field type="b2jheader" default="COM_B2JCONTACT_SPECIAL_FIELDS_LBL" color="fields"/>
 
-			<field name="sender0" type="b2jtext" size="26" label="COM_B2JCONTACT_NAME_REQUEST_LBL" description="" wizard="COM_B2JCONTACT_YOUR_NAME_DFLT"/>
-			<field name="sender0display" type="list" label="COM_B2JCONTACT_FIELD_STATE" description="JFIELD_ENABLED_DESC" default="2">
-				<option value="0">JDISABLED</option>
-				<option value="1">JOPTION_OPTIONAL</option>
-				<option value="2">JOPTION_REQUIRED</option>
-			</field>
-			<field name="sender0order" type="text" label="JFIELD_ORDERING_LABEL" description="" size="5" default="1"/>
-			<field type="spacer"/>
-
-			<field name="sender1" type="b2jtext" size="26" label="COM_B2JCONTACT_ADDRESS_REQUEST_LBL" description="" wizard="COM_B2JCONTACT_YOUR_EMAIL_DFLT"/>
-			<field name="sender1display" type="list" label="COM_B2JCONTACT_FIELD_STATE" description="JFIELD_ENABLED_DESC" default="2">
-				<option value="0">JDISABLED</option>
-				<option value="1">JOPTION_OPTIONAL</option>
-				<option value="2">JOPTION_REQUIRED</option>
-			</field>
-			<field name="sender1order" type="text" label="JFIELD_ORDERING_LABEL" description="" size="5" default="2"/>
 			<field name="sender1isemail" type="hidden" default="1"/>
 			<!-- stexic hanel em xml@-->
 			<field type="b2jheader" default="COM_B2JCONTACT_TEXTFIELDS_LBL" color="fields"/>
@@ -172,6 +155,11 @@
 			</field>
 
 			<field name="upload" type="b2jtext" filter="safehtml" label="COM_B2JCONTACT_UPLOAD_FIELD_LBL" description="" wizard="COM_B2JCONTACT_UPLOAD_FIELD_DFLT"/>
+
+			<field name="upload_btn" type="b2jtext" filter="safehtml" label="COM_B2JCONTACT_UPLOAD_BROWSE_FILES_LBL" description="" wizard="COM_B2JCONTACT_UPLOAD_BROWSE_FILES_DFLT"/>
+
+			<field name="reset_attachment_btn" type="b2jtext" filter="safehtml" label="COM_B2JCONTACT_UPLOAD_RESET_BTN_LBL" description="" wizard="COM_B2JCONTACT_UPLOAD_RESET_BTN_DFLT"/>
+
 			<field name="uploadmax_file_size" type="text" label="COM_B2JCONTACT_UPLOAD_MAXSIZE_LBL" description="COM_B2JCONTACT_UPLOAD_MAXSIZE_DSC" default="102400" size="5"/>
 
 			<field type="b2jconditionalwarninglabel" description="" default="COM_B2JCONTACT_FUNCTION_DISABLED" color="fields" triggerkey="mimefilter" triggervalue="disabled"/>
